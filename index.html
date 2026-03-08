@@ -1214,11 +1214,30 @@ ul {
     transition: var(--transition);
     border: 1px solid var(--gray-100);
     position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+    border-color: var(--primary-light);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--pink));
+    transform: scaleX(0);
+    transition: var(--transition);
+    z-index: 5;
+}
+
+.product-card:hover::before {
+    transform: scaleX(1);
 }
 
 .products-grid.list-view .product-card {
@@ -1264,12 +1283,23 @@ ul {
 
 .product-image {
     position: relative;
-    height: 220px;
+    height: 240px;
     background: linear-gradient(135deg, var(--off-white), var(--pink-bg));
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
 }
 
 .product-image i {
@@ -1293,12 +1323,14 @@ ul {
     gap: 8px;
     padding: 10px;
     transition: var(--transition);
-    opacity: 1;
+    opacity: 0;
+    transform: translateX(20px);
     z-index: 10;
 }
 
 .product-card:hover .product-actions {
-    top: 10px;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .product-action-btn {
@@ -1312,11 +1344,31 @@ ul {
     justify-content: center;
     font-size: 0.85rem;
     box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.product-action-btn:hover::before {
+    opacity: 1;
 }
 
 .product-action-btn:hover {
-    background: var(--primary);
     color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
 }
 
 .product-action-btn.wishlisted {
@@ -1324,28 +1376,35 @@ ul {
 }
 
 .product-info {
-    padding: 15px;
+    padding: 18px;
+    background: var(--white);
 }
 
 .product-category {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--primary);
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 5px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    display: inline-block;
+    padding: 3px 10px;
+    background: var(--off-white);
+    border-radius: var(--radius-full);
 }
 
 .product-name {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--gray-800);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     cursor: pointer;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    transition: var(--transition);
+    line-height: 1.4;
 }
 
 .product-name:hover {
@@ -1355,12 +1414,12 @@ ul {
 .product-rating {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 8px;
+    gap: 6px;
+    margin-bottom: 10px;
 }
 
 .product-rating i {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--warning);
 }
 
@@ -1646,6 +1705,492 @@ ul {
     font-size: 0.6rem;
 }
 
+/* ===== Privacy Policy Page - Accordion Style ===== */
+.privacy-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: var(--radius-xl);
+    padding: 50px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.privacy-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.privacy-hero-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.privacy-hero-icon i {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.privacy-hero h2 {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.privacy-hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.privacy-meta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.privacy-meta span {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.privacy-meta i {
+    color: var(--pink);
+}
+
+/* Accordion Styles */
+.privacy-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.accordion-item.active {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-purple);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    background: var(--off-white);
+}
+
+.accordion-item.active .accordion-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+.accordion-number {
+    width: 40px;
+    height: 40px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.accordion-item.active .accordion-number {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+}
+
+.accordion-title {
+    flex: 1;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    transition: var(--transition);
+}
+
+.accordion-item.active .accordion-title {
+    color: var(--white);
+}
+
+.accordion-icon {
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    transform: rotate(0deg);
+}
+
+.accordion-item.active .accordion-icon {
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: var(--gray-50);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+}
+
+.accordion-content-inner {
+    padding: 25px;
+}
+
+.accordion-content p {
+    margin-bottom: 15px;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* Info Cards */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid var(--gray-100);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-3px);
+}
+
+.info-card i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.info-card h4 {
+    font-size: 0.95rem;
+    color: var(--gray-800);
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--gray-500);
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li i {
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.feature-list li i.fa-lock,
+.feature-list li i.fa-server,
+.feature-list li i.fa-shield-alt,
+.feature-list li i.fa-user-secret {
+    color: var(--success);
+}
+
+/* Rights Grid */
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.right-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-100);
+}
+
+.right-item i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.right-item span {
+    font-size: 0.85rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* Retention Note */
+.retention-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    border-radius: var(--radius);
+    margin-top: 15px;
+}
+
+.retention-note i {
+    color: #f97316;
+    font-size: 1.1rem;
+}
+
+.retention-note p {
+    margin: 0;
+    color: #c2410c;
+    font-size: 0.9rem;
+}
+
+/* Cookie Types */
+.cookie-types {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.cookie-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-100);
+}
+
+.cookie-badge {
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.cookie-item.essential .cookie-badge {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cookie-item.analytics .cookie-badge {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.cookie-item.marketing .cookie-badge {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+.cookie-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.partner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-100);
+    text-align: center;
+}
+
+.partner-item i {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.partner-item h4 {
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    margin: 0;
+}
+
+/* Contact CTA */
+.contact-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius);
+    margin-top: 20px;
+}
+
+.contact-cta i {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.contact-cta span {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.contact-cta strong {
+    font-weight: 600;
+}
+
+/* Contact Details */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-way {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-100);
+}
+
+.contact-way i {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: var(--white);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.contact-way div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-way strong {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-way span {
+    color: var(--gray-800);
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .privacy-hero {
+        padding: 30px 20px;
+    }
+    
+    .privacy-hero h2 {
+        font-size: 1.4rem;
+    }
+    
+    .privacy-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .accordion-header {
+        padding: 15px;
+    }
+    
+    .accordion-title {
+        font-size: 0.95rem;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /* ===== Shop Layout ===== */
 .shop-layout {
     display: flex;
@@ -1654,39 +2199,57 @@ ul {
 }
 
 .shop-sidebar {
-    width: 260px;
+    width: 280px;
     flex-shrink: 0;
     position: sticky;
-    top: 80px;
+    top: 85px;
     height: fit-content;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    border: 1px solid var(--gray-100);
+    box-shadow: var(--shadow-sm);
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--gray-100);
 }
 
 .sidebar-header h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--gray-800);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.sidebar-header h3 i {
+    color: var(--primary);
 }
 
 .sidebar-close {
     display: none;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: var(--gray-100);
     color: var(--gray-600);
     align-items: center;
     justify-content: center;
+    transition: var(--transition);
+}
+
+.sidebar-close:hover {
+    background: var(--danger);
+    color: var(--white);
 }
 
 .filter-group {
@@ -1700,21 +2263,50 @@ ul {
     color: var(--gray-800);
     margin-bottom: 12px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group h4::before {
+    content: '';
+    width: 3px;
+    height: 14px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .filter-option {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 0;
+    gap: 10px;
+    padding: 10px 14px;
     cursor: pointer;
     font-size: 0.85rem;
     color: var(--gray-600);
     transition: var(--transition);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    border: 1px solid transparent;
 }
 
 .filter-option:hover {
     color: var(--primary);
+    background: var(--off-white);
+    border-color: var(--primary-light);
+}
+
+.filter-option.active {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .filter-option input[type="radio"],
@@ -1722,6 +2314,21 @@ ul {
     accent-color: var(--primary);
     width: 16px;
     height: 16px;
+    cursor: pointer;
+}
+
+.filter-option .filter-count {
+    margin-left: auto;
+    background: var(--gray-100);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    color: var(--gray-500);
+}
+
+.filter-option.active .filter-count {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
 }
 
 .price-range input[type="range"] {
@@ -1761,12 +2368,61 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    padding: 12px 15px;
-    background: var(--gray-50);
-    border-radius: var(--radius);
-    gap: 10px;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--off-white), var(--white));
+    border-radius: var(--radius-lg);
+    gap: 15px;
     flex-wrap: wrap;
+    border: 1px solid var(--gray-100);
+    box-shadow: var(--shadow-sm);
+}
+
+.shop-results {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.shop-results strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--white);
+    padding: 5px;
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+}
+
+.view-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--gray-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    border: none;
+}
+
+.view-btn:hover {
+    color: var(--primary);
+    background: var(--off-white);
+}
+
+.view-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow);
 }
 
 .filter-toggle {
@@ -4271,18 +4927,290 @@ ul {
         </div>
     </div>
     <div class="container section">
-        <div class="about-text" style="text-align: left; max-width: 1000px;">
-            <h2>Information We Collect</h2>
-            <p>We collect information when you place an order or subscribe to our newsletter. This includes your name, email address, phone number, and shipping address.</p>
+        <!-- Privacy Policy Hero -->
+        <div class="privacy-hero">
+            <div class="privacy-hero-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h2>Your Privacy Matters to Us</h2>
+            <p>We are committed to protecting your personal information and your right to privacy. This policy outlines how we collect, use, and safeguard your data.</p>
+            <div class="privacy-meta">
+                <span><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</span>
+                <span><i class="fas fa-envelope"></i> Questions? Contact us at lavindra.lk@gmail.com</span>
+            </div>
+        </div>
+        
+        <!-- Privacy Accordion -->
+        <div class="privacy-accordion">
             
-            <h2>How We Use Your Information</h2>
-            <p>Your information is used to process transactions, improve our website, and send periodic emails about your order or other products and services.</p>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">01</span>
+                    <span class="accordion-title">Information We Collect</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>We collect information when you place an order, subscribe to our newsletter, or contact us. This includes:</p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-user"></i>
+                            <h4>Personal Information</h4>
+                            <p>Name, email address, phone number, and shipping/billing address</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-credit-card"></i>
+                            <h4>Payment Information</h4>
+                            <p>Payment method details (processed securely)</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-desktop"></i>
+                            <h4>Device Information</h4>
+                            <p>IP address, browser type, and device data</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-comments"></i>
+                            <h4>Communication Data</h4>
+                            <p>Messages through contact forms or email</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <h2>Google AdSense & Cookies</h2>
-            <p>This website uses Google AdSense. Google, as a third-party vendor, uses cookies to serve ads on your site. Google's use of the DART cookie enables it to serve ads to your users based on their visit to your sites and other sites on the Internet.</p>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">02</span>
+                    <span class="accordion-title">How We Use Your Information</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Your information is used for the following purposes:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Processing and fulfilling your orders</li>
+                        <li><i class="fas fa-check-circle"></i> Providing customer support and responding to inquiries</li>
+                        <li><i class="fas fa-check-circle"></i> Improving our website and user experience</li>
+                        <li><i class="fas fa-check-circle"></i> Sending periodic emails about your order and products</li>
+                        <li><i class="fas fa-check-circle"></i> Preventing fraud and ensuring transaction security</li>
+                    </ul>
+                </div>
+            </div>
             
-            <h2>Data Protection</h2>
-            <p>We implement a variety of security measures to maintain the safety of your personal information. We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties.</p>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">03</span>
+                    <span class="accordion-title">GDPR Compliance (EU Customers)</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>For customers in the European Union, we comply with the General Data Protection Regulation (GDPR):</p>
+                    <div class="rights-grid">
+                        <div class="right-item">
+                            <i class="fas fa-search"></i>
+                            <span>Right to Access</span>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-edit"></i>
+                            <span>Right to Rectification</span>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-trash-alt"></i>
+                            <span>Right to Erasure</span>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Data Portability</span>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Right to Object</span>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Right to Lodge Complaint</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">04</span>
+                    <span class="accordion-title">Data Retention</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>We retain your personal information for as long as necessary to:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Complete any pending transactions</li>
+                        <li><i class="fas fa-check-circle"></i> Comply with legal obligations (7 years for tax/accounting)</li>
+                        <li><i class="fas fa-check-circle"></i> Resolve disputes and enforce our agreements</li>
+                    </ul>
+                    <div class="retention-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Marketing data is retained until you unsubscribe from our communications.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">05</span>
+                    <span class="accordion-title">Cookies & Tracking</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>This website uses cookies and similar tracking technologies:</p>
+                    <div class="cookie-types">
+                        <div class="cookie-item essential">
+                            <span class="cookie-badge">Essential</span>
+                            <p>Required for basic site functionality and secure transactions</p>
+                        </div>
+                        <div class="cookie-item analytics">
+                            <span class="cookie-badge">Analytics</span>
+                            <p>Helps us understand how visitors navigate our site</p>
+                        </div>
+                        <div class="cookie-item marketing">
+                            <span class="cookie-badge">Marketing</span>
+                            <p>Used to deliver relevant advertisements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">06</span>
+                    <span class="accordion-title">Third-Party Services</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>We may share your data with trusted third-party service providers:</p>
+                    <div class="partners-grid">
+                        <div class="partner-item">
+                            <i class="fas fa-payment"></i>
+                            <h4>Payment Processing</h4>
+                        </div>
+                        <div class="partner-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h4>Shipping Partners</h4>
+                        </div>
+                        <div class="partner-item">
+                            <i class="fas fa-paper-plane"></i>
+                            <h4>Email Services</h4>
+                        </div>
+                        <div class="partner-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Analytics</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">07</span>
+                    <span class="accordion-title">Google AdSense</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>This website uses Google AdSense. Google, as a third-party vendor, uses cookies to serve ads on your site. Google's use of the DART cookie enables it to serve ads to your users based on their visit to your sites and other sites on the Internet.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">08</span>
+                    <span class="accordion-title">Data Security</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>We implement appropriate technical and organizational measures to protect your personal information:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-lock"></i> SSL encryption for all data transmission</li>
+                        <li><i class="fas fa-server"></i> Secure storage of personal data</li>
+                        <li><i class="fas fa-shield-alt"></i> Regular security audits and updates</li>
+                        <li><i class="fas fa-user-secret"></i> Limited access to personal data by authorized personnel</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">09</span>
+                    <span class="accordion-title">Children's Privacy</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">10</span>
+                    <span class="accordion-title">Your Rights</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>You have the following rights regarding your personal information:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-search"></i> <strong>Access:</strong> Request a copy of your personal data</li>
+                        <li><i class="fas fa-edit"></i> <strong>Correction:</strong> Request correction of inaccurate data</li>
+                        <li><i class="fas fa-trash-alt"></i> <strong>Deletion:</strong> Request deletion of your data</li>
+                        <li><i class="fas fa-ban"></i> <strong>Opt-Out:</strong> Unsubscribe from marketing</li>
+                        <li><i class="fas fa-hand-paper"></i> <strong>Objection:</strong> Object to processing</li>
+                    </ul>
+                    <div class="contact-cta">
+                        <i class="fas fa-envelope"></i>
+                        <span>To exercise these rights, contact us at <strong>lavindra.lk@gmail.com</strong></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">11</span>
+                    <span class="accordion-title">Changes to This Policy</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>We may update this privacy policy periodically. We will notify you of any material changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="accordion-number">12</span>
+                    <span class="accordion-title">Contact Us</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>If you have any questions about this privacy policy, please contact us:</p>
+                    <div class="contact-details">
+                        <div class="contact-way">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>lavindra.lk@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-way">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <span>+94 70 526 8077</span>
+                            </div>
+                        </div>
+                        <div class="contact-way">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <span>52 Kadaweediya Street, Thalawa, Sri Lanka</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>
@@ -5050,6 +5978,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initBackToTop();
     initForms();
+    initPrivacyAccordion();
     renderFeaturedProducts();
     updateCartUI();
     updateWishlistUI();
@@ -5057,6 +5986,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show home page by default
     navigateTo('home');
 });
+
+// ===== Privacy Policy Accordion =====
+function initPrivacyAccordion() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (header) {
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                accordionItems.forEach(i => i.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+}
 
 // ===== Checkout Form Handler =====
 const checkoutForm = document.getElementById('checkoutForm');
@@ -6078,3 +7029,4 @@ function runCounters() {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
+
