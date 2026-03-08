@@ -3064,20 +3064,285 @@ ul {
 /* ===== Contact Page ===== */
 .contact-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 30px 0;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    padding: 40px 0;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    color: var(--white);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.contact-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(249,168,212,0.2);
+    border-radius: 50%;
+}
+
+.contact-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero p {
+    font-size: 1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contact Cards Grid */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--gray-100);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.contact-card-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-card-content h4 {
+    font-size: 1rem;
+    color: var(--gray-800);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-card-content p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* Map Section */
+.contact-map {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 200px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Social Section */
+.contact-social {
+    background: linear-gradient(135deg, var(--gray-50), var(--off-white));
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.contact-social h4 {
+    font-size: 1.1rem;
+    color: var(--gray-800);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    color: var(--white);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.contact-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(249,168,212,0.2);
+    border-radius: 50%;
+}
+
+.contact-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero p {
+    font-size: 1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info {
+    position: relative;
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--gray-800);
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .contact-info > p {
     color: var(--gray-500);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Contact Cards Grid */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--gray-100);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.contact-card-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-card-content h4 {
+    font-size: 1rem;
+    color: var(--gray-800);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-card-content p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* Map Section */
+.contact-map {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 200px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Social Section */
+.contact-social {
+    background: linear-gradient(135deg, var(--gray-50), var(--off-white));
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.contact-social h4 {
+    font-size: 1.1rem;
+    color: var(--gray-800);
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .contact-details {
@@ -3091,17 +3356,26 @@ ul {
     display: flex;
     gap: 15px;
     align-items: flex-start;
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    background: var(--white);
+    box-shadow: var(--shadow);
 }
 
 .contact-item i {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(249,168,212,0.1));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--white);
     font-size: 1rem;
     flex-shrink: 0;
 }
@@ -3110,95 +3384,140 @@ ul {
     font-size: 0.9rem;
     color: var(--gray-800);
     margin-bottom: 2px;
+    font-weight: 600;
 }
 
 .contact-item p {
     font-size: 0.85rem;
-    color: var(--gray-500);
+    color: var(--gray-600);
 }
 
 .social-links {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .social-links a {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
     background: linear-gradient(135deg, var(--primary), var(--pink));
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: var(--transition);
 }
 
 .social-links a:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-purple);
 }
 
 .contact-form-wrapper {
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: 30px;
-    box-shadow: var(--shadow);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
+}
+
+.contact-form-wrapper h3 {
+    font-size: 1.5rem;
+    color: var(--gray-800);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-form-wrapper > p {
+    color: var(--gray-500);
+    margin-bottom: 25px;
 }
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--gray-900);
-    color: var(--gray-400);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: var(--gray-300);
     position: relative;
     padding-top: 0;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
 }
 
 .footer-wave {
-    color: var(--gray-900);
+    color: #0f3460;
     margin-top: -1px;
 }
 
 .footer-wave svg {
     display: block;
     width: 100%;
-    height: 60px;
+    height: 80px;
+}
+
+.footer-main {
+    padding: 60px 0 40px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 40px;
-    padding: 40px 0;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 50px;
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.5rem;
+    gap: 12px;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    border-radius: 8px;
 }
 
 .footer-logo i {
     color: var(--primary-light);
 }
 
+.footer-tagline {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    margin-bottom: 20px;
+    line-height: 1.8;
+    border-left: 3px solid var(--primary);
+    padding-left: 15px;
+}
+
 .footer-col p {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 .footer-col h4 {
     color: var(--white);
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-col h4::after {
@@ -3206,52 +3525,198 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px;
-    height: 2px;
+    width: 40px;
+    height: 3px;
     background: linear-gradient(135deg, var(--primary), var(--pink));
+    border-radius: 2px;
 }
 
 .footer-col ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-col ul li a {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--gray-400);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-col ul li a::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--primary-light);
     transition: var(--transition);
 }
 
 .footer-col ul li a:hover {
     color: var(--primary-light);
-    padding-left: 5px;
+    padding-left: 8px;
+}
+
+.footer-col ul li a:hover::before {
+    width: 6px;
 }
 
 .contact-list li {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.contact-list li:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(5px);
 }
 
 .contact-list li i {
     color: var(--primary-light);
-    width: 16px;
+    width: 20px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.contact-list li span {
+    color: var(--gray-300);
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(249,168,212,0.1));
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(124,58,237,0.2);
+}
+
+.newsletter h4 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,0.05);
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--gray-500);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.08);
+}
+
+.newsletter-form button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: var(--white);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124,58,237,0.4);
 }
 
 .footer-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 25px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
     font-size: 0.85rem;
+    background: rgba(0,0,0,0.2);
+}
+
+.footer-bottom p {
+    color: var(--gray-400);
+}
+
+.footer-bottom a {
+    color: var(--primary-light);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+    color: var(--pink);
 }
 
 .payment-icons {
     display: flex;
     gap: 15px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--gray-500);
+}
+
+.payment-icons i {
+    transition: var(--transition);
+}
+
+.payment-icons i:hover {
+    color: var(--primary-light);
+    transform: translateY(-3px);
+}
+
+/* Footer Social Links */
+.footer-social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.footer-social-links a {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(249,168,212,0.1));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-social-links a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(124,58,237,0.4);
+    border-color: transparent;
 }
 
 /* ===== Toast Notifications ===== */
@@ -3586,10 +4051,6 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .about-stats {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -3749,18 +4210,23 @@ ul {
     .contact-layout {
         grid-template-columns: 1fr;
     }
-
-    .footer-grid {
+    
+    .contact-hero {
+        padding: 25px;
+    }
+    
+    .contact-hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-cards {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+    
+    .contact-form-wrapper {
+        padding: 25px;
     }
-
+    
     .page-header {
         padding: 60px 0 30px;
     }
@@ -4175,10 +4641,62 @@ ul {
     color: var(--white);
 }
 
-/* ===== Smooth page padding for mobile bottom nav ===== */
+/* ===== Footer Mobile Styles ===== */
 @media (max-width: 768px) {
     .footer {
         padding-bottom: 60px;
+    }
+    
+    .footer-main {
+        padding: 30px 0 20px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        padding: 0;
+    }
+    
+    .newsletter {
+        padding: 20px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .footer-social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        font-size: 1.4rem;
+    }
+    
+    .footer-col h4 {
+        font-size: 1rem;
+    }
+    
+    .contact-list li {
+        padding: 8px;
+        font-size: 0.85rem;
     }
 }
 
@@ -4504,22 +5022,7 @@ ul {
                 </div>
             </section>
 
-            <!-- Newsletter -->
-            <section class="section newsletter-section">
-    <div class="container">
-        <div class="newsletter-content animate-on-scroll">
-            <i class="fas fa-envelope-open-text"></i>
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get the latest deals and new arrivals straight to your inbox</p>
-            <form action="https://formspree.io/f/xpqjjqez" method="POST" class="newsletter-form" id="newsletterForm">
-                <label for="newsletterEmail" class="sr-only">Email address</label>
-                <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" required>
-                <button type="submit" class="btn btn-primary">Subscribe <i class="fas fa-paper-plane"></i></button>
-            </form>
             
-        </div>
-    </div>
-</section>
 
         </section>
 
@@ -4859,11 +5362,65 @@ ul {
                 </div>
             </div>
             <div class="container">
+                <!-- Contact Hero -->
+                <div class="contact-hero">
+                    <h2> We'd Love to Hear From You!</h2>
+                    <p>Have questions or feedback? Our team is here to help you with anything you need.</p>
+                </div>
+                
                 <div class="contact-layout">
                     <div class="contact-info animate-on-scroll">
                         <h3>Get in Touch</h3>
                         <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-                        <div class="contact-details">
+                        
+                        <!-- Contact Cards -->
+                        <div class="contact-cards">
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Visit Us</h4>
+                                    <p>52 Kadaweediya Street,<br>Thalawa, Sri Lanka</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Call Us</h4>
+                                    <p>+94 70 526 8077</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Email Us</h4>
+                                    <p>lavindra.lk@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Working Hours</h4>
+                                    <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Map -->
+                        <div class="contact-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254.02288945621328!2d80.34981277948154!3d8.236852758858712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf15b0aba8713%3A0x53be1458a4f51591!2sSampath%20Shoe%20palace!5e0!3m2!1sen!2slk!4v1773000029514!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        
+                        <!-- Social Section -->
+                        <div class="contact-social">
+                            <h4>Follow Us on Social Media</h4>
                             <div class="contact-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div><h4>Address</h4><p>52 kadaweediya Street, Thalawa, Sri Lanka</p></div>
@@ -4889,28 +5446,34 @@ ul {
                         </div>
                     </div>
                     <div class="contact-form-wrapper animate-on-scroll">
-    <form action="https://formspree.io/f/xpqjjqez" method="POST" id="contactForm">
+                         <form action="https://formspree.io/f/xpqjjqez" method="POST" id="contactForm">
+                        <h3>Send us a Message</h3>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
         <div class="form-row">
             <div class="form-group">
-                <label>Name *</label>
-                <input type="text" name="name" required placeholder="Your name">
+                <label>Your Name *</label>
+                <input type="text" name="name" required placeholder="John Doe">
             </div>
             <div class="form-group">
-                <label>Email *</label>
-                <input type="email" name="email" required placeholder="your@email.com">
+                <label>Email Address *</label>
+                <input type="email" name="email" required placeholder="john@example.com">
             </div>
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+94 70 000 0000">
         </div>
         <div class="form-group">
             <label>Subject</label>
             <input type="text" name="subject" placeholder="How can we help?">
         </div>
                     <div class="form-group">
-                               <label>Message *</label>
-                               <textarea name="message" rows="5" required placeholder="Your message..."></textarea>
+                               <label>Your Message *</label>
+                               <textarea name="message" rows="6" required placeholder="Write your message here..."></textarea>
                     </div>
-                              <button type="submit" class="btn btn-primary btn-lg">
-                                   Send Message <i class="fas fa-paper-plane"></i>
-                              </button>
+                              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
                         </form>
                    </div>
                 </div>
@@ -5225,56 +5788,70 @@ ul {
             </svg>
         </div>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="footer.png" alt="Lavindra Logo" style="height: 40px; width: auto; margin-right: 10px;">
-                        <span>Lavindra</span>
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="footer.png" alt="Lavindra Logo" style="height: 40px; width: auto; margin-right: 10px;">
+                            <span>Lavindra</span>
+                        </div>
+                        <p class="footer-tagline">Your one-stop shop for school supplies, footwear, bags, and accessories. Quality products at affordable prices.</p>
+                        
+                        <!-- Newsletter -->
+                        <div class="newsletter">
+                            <h4>Subscribe to Our Newsletter</h4>
+                            <p>Get the latest updates on new products and upcoming sales</p>
+                            <form action="https://formspree.io/f/mbdaaade" method="POST" class="newsletter-form" >
+                                <input type="email" name="email" placeholder="Enter your email" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                            </form>
+                        </div>
+                        
+                        <div class="footer-social-links">
+                            <a href="https://web.facebook.com/people/Lavindra/61580650463175/?rdid=P7LDf6uvl9NDBMYC&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F19pUwme6Xf%2F%3F_rdc%3D1%26_rdr" class="social-facebook" data-name="Facebook" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/lavindra.lk?igsh=MTEzbHJsMzM2M3h4NA%3D%3D" class="social-instagram" data-name="Instagram" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://wa.me/94703720132" class="social-whatsapp" data-name="WhatsApp" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                            <a href="https://www.tiktok.com/@lavindra.lk?_t=ZS-90VWhL89fw0&_r=1" class="social-tiktok" data-name="TikTok" target="_blank"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                        </div>
                     </div>
-                    <p>Your one-stop shop for school supplies, footwear, bags, and accessories. Quality products at affordable prices.</p>
-                    <div class="social-links">
-                         <a href="https://web.facebook.com/people/Lavindra/61580650463175/?rdid=P7LDf6uvl9NDBMYC&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F19pUwme6Xf%2F%3F_rdc%3D1%26_rdr" class="social-facebook" data-name="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/lavindra.lk?igsh=MTEzbHJsMzM2M3h4NA%3D%3D" class="social-instagram" data-name="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="https://wa.me/94703720132" class="social-whatsapp" data-name="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                        <a href="https://www.tiktok.com/@lavindra.lk?_t=ZS-90VWhL89fw0&_r=1" class="social-tiktok" data-name="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" data-page="home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#" data-page="shop"><i class="fas fa-chevron-right"></i> Shop</a></li>
+                            <li><a href="#" data-page="categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                            <li><a href="#" data-page="about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="#" data-page="contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                            <li><a href="#" data-page="privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#" data-page="home">Home</a></li>
-                        <li><a href="#" data-page="shop">Shop</a></li>
-                        <li><a href="#" data-page="categories">Categories</a></li>
-                        <li><a href="#" data-page="about">About Us</a></li>
-                        <li><a href="#" data-page="contact">Contact</a></li>
-                        <li><a href="#" data-page="privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="#" data-page="shop" data-filter="shoes">Shoes</a></li>
-                        <li><a href="#" data-page="shop" data-filter="bags">Bags</a></li>
-                        <li><a href="#" data-page="shop" data-filter="books">Books</a></li>
-                        <li><a href="#" data-page="shop" data-filter="packages">Packages</a></li>
-                        <li><a href="#" data-page="shop" data-filter="accessories">Accessories</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i> 52 Kadaweediya Street, Thalawa, Sri Lanka</li>
-                        <li><i class="fas fa-phone"></i> +94 70 526 8077</li>
-                        <li><i class="fas fa-envelope"></i> lavindra.lk@gmail.com</li>
-                    </ul>
+                    <div class="footer-col">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#" data-page="shop" data-filter="shoes"><i class="fas fa-chevron-right"></i> Shoes</a></li>
+                            <li><a href="#" data-page="shop" data-filter="bags"><i class="fas fa-chevron-right"></i> Bags</a></li>
+                            <li><a href="#" data-page="shop" data-filter="books"><i class="fas fa-chevron-right"></i> Books</a></li>
+                            <li><a href="#" data-page="shop" data-filter="packages"><i class="fas fa-chevron-right"></i> Packages</a></li>
+                            <li><a href="#" data-page="shop" data-filter="accessories"><i class="fas fa-chevron-right"></i> Accessories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>52 Kadaweediya Street,<br>Thalawa, Sri Lanka</span></li>
+                            <li><i class="fas fa-phone"></i> <span>+94 70 526 8077</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>lavindra.lk@gmail.com</span></li>
+                            <li><i class="fas fa-clock"></i> <span>Mon - Sat: 8:00 AM - 8:00 PM</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Lavindra. All rights reserved. | Developed by <a href="https://sitesn4p.netlify.app" target="_blank" style="color: var(--primary-light); text-decoration: none; font-weight: 600;">SiteSnap</a></p>
+                <p>&copy; 2026 <strong>Lavindra</strong>. All rights reserved. | Developed by <a href="https://sitesn4p.netlify.app" target="_blank">SiteSnap</a></p>
                 <div class="payment-icons">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fas fa-money-bill-wave" title="Cash on Delivery"></i>
                 </div>
             </div>
         </div>
@@ -5334,7 +5911,17 @@ const products = [
         isNew: true 
     },
     { id: 5, name: "Ladies Formal Shoes", category: "shoes", subcategory: "ladies-shoes", price: 4200, originalPrice: 5000, image:"staff-ladies-shoes.jpg" , rating: 4.6, reviews: 54, badge:"new" , description:"Elegant ladies formal shoes with comfortable heel. Perfect for office and events.", inStock:true , isNew:true },
-    { id :6 , name:"Ladies Casual Flats" , category:"shoes" , subcategory:"ladies-shoes" , price :2800 , originalPrice :3500 , image:"ladies-casual-flats.jpg" , rating :4.2 , reviews :73 , badge:"", description:"Comfortable ladies casual flats. Lightweight and stylish for everyday wear.", inStock:true , isNew:false },
+    { id :6 , name:"53 Pcs Tool Set" , category:"electric" , subcategory:"gadgets" , price :2400 , originalPrice :3500 , image:["Pcs Tool Set 04.jpeg","Pcs Tool Set 01.jpeg","Pcs Tool Set 02.jpeg","Pcs Tool Set 03.jpeg"] , rating :4.2 , reviews :73 , badge:"", description:["Product details of High Quality 53 pcs Spanner Set Car Auto Repair Tool",
+"• High Quality and Professional",
+"• Professional Tool Set",
+"• Durable Product",
+"• Corrosion-Resistant",
+"• Easy Storage: A sturdy plastic organizing case is included.",
+"• Best value available in professional quality hand tools.",
+"• Reliable Material",
+"53PCS 1/4” Dr. Socket Wrench Set",
+
+"21-Bit Sockets: SL4,5.5,7,PH1,2,3,PZ1,2,3               HEX3,4,5,6,7,8, T10,15,20,25,30,40               13-1/4”DR Sockets:4,4.5,5,6,7,8,9,10,11,12,13,14MM               7-1/4”DR Deep Sockets Wrench:6,7,81,12,13,14MM               3-Hex Keywrenches: 1.5,2,2.5MM               1-1/4″Dr universal Joint               1-1/4″*2″Extension Ban               1-1/4″*4″Extension Ban               1-1/4”*6″Extension Ban               1-1/4″Dr Sliding T bar               1-1/4″ Quick RatchetHandle               1-6″Spanner Handle               1-Bit Adapter               1-Blow Case...."], inStock:true , isNew:false },
     {
         id: 7, 
         name: "Men's Sports Shoes MS-wh001", 
@@ -5396,7 +5983,7 @@ const products = [
         isNew: true 
     },
     // BAGS
-    { id:11, name: "12V DC Neon Strip Light - 5m", category: "electric", subcategory: "gadgets", price: 1250, originalPrice: 1500, image: ["lights.jpeg","lights 01.jpeg","lights 02.jpeg"], rating: 4.8, reviews: 156, badge: "hot", description: "High-quality 12V DC neon strip light with 5m length. Perfect for home or office decoration.", inStock: true, isNew: false },
+    { id:11, name: "12V DC Neon Strip Light - 5m", category: "electric", subcategory: "gadgets", price: 1250, originalPrice: 1500, image: ["lights.jpeg","lights 01.jpeg","lights 02.jpeg","lights 03.jpeg"],colors:[{ name: "White", code: "#FFFFFF"},{ name: "Red", code: "#EF4444"},{ name: "Blue", code: "#3B82F6"},{ name: "Lime Blue", code: "#ADD8E6"},{name:"yellow",code:"#FFFF00"},{name:"gren", code:"#00FF00"},{name:"pink",code:"#FFC0CB"}], rating: 4.8, reviews: 156, badge: "hot", description: "High-quality 12V DC neon strip light with 5m length. Perfect for home or office decoration. 5M LED neon rope light, DC12V low voltage, SMD 2835 120 LED/m, warm white 3000K, IP67 waterproof rated (Waterproof power supply required for outdoor use, NOT included in the package). •", inStock: true, isNew: false },
     { id:12, name: "School Bag - Blue", category: "bags", subcategory: "school-bags", price: 3200, originalPrice: 4000, image: "images/school-bag-blue.jpg", rating: 4.4, reviews: 112, badge: "sale", description: "Durable blue school bag with laptop compartment. Ergonomic design for comfort.", inStock: true, isNew: false },
     { id: 13, name: "Ladies Handbag - Pink", category: "bags", subcategory: "ladies-bags", price: 3800, originalPrice: 4500, image: "images/ladies-handbag-pink.jpg", rating: 4.5, reviews: 89, badge: "new", description: "Stylish pink ladies handbag with multiple pockets. Premium PU leather material.", inStock: true, isNew: true },
     { id: 14, name: "Large Capacity Travel Bag",
@@ -5410,7 +5997,14 @@ const products = [
         ],
         rating: 4.6,
         reviews: 76, badge: "", 
-        description: "◆ Made with lightweight waterproof and tear resistant oxford fabric, solid, durable and strong enough to carry your belongings. ◆ The travel duffel bag is elegant, fashionable and practical. ◆ The Duffel Bag is perfect to help you carrying your traveling essentials, keeps your belongings organized. ◆ It is designed with large capacity and wet pocket. The travel bag is made from Nylon fabric which is water resistance material keeps your stuff dry inside (The zipper part is not water resistant).", 
+        description: ["◆ Made with lightweight waterproof and tear resistant oxford fabric, solid, durable and strong enough to carry your belongings.",
+            "◆ The travel duffel bag is elegant, fashionable and practical.",
+            "◆ The Duffel Bag is perfect to help you carrying your traveling essentials, keeps your belongings organized.",
+            "◆ It is designed with large capacity and wet pocket. The travel bag is made from Nylon fabric which is water resistance material keeps your stuff dry inside (The zipper part is not water resistant)",
+
+
+
+        ], 
         inStock: true, 
         isNew: false
      },
@@ -5419,11 +6013,16 @@ const products = [
     { id: 16, name: "Pre-School Mini Bag", category: "bags", subcategory: "pre-school-bags", price: 1800, originalPrice: 2200, image: "images/preschool-mini-bag.jpg", rating: 4.5, reviews: 98, badge: "", description: "Adorable mini bag for pre-schoolers. Soft material with adjustable straps.", inStock: true, isNew: true },
 
     // BOOKS
-    { id: 17, name: "CR Book - 200 Pages", category: "books", subcategory: "cr-books", price: 180, originalPrice: 220, image: "cr-book-200.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false },
-    { id: 18, name: "CR Book - 400 Pages", category: "books", subcategory: "cr-books", price: 320, originalPrice: 380, image: "images/cr-book-400.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 400 pages. Durable cover and quality paper.", inStock: true, isNew: false },
-    { id: 19, name: "B5 Book - 200 Pages", category: "books", subcategory: "b5-books", price: 200, originalPrice: 250, image: "images/b5-book-200.jpg", rating: 4.4, reviews: 167, badge: "", description: "B5 size exercise book with 200 pages. Perfect for school and college.", inStock: true, isNew: false },
-    { id: 20, name: "B5 Book - 400 Pages", category: "books", subcategory: "b5-books", price: 350, originalPrice: 420, image: "images/b5-book-400.jpg", rating: 4.6, reviews: 143, badge: "new", description: "Premium B5 exercise book with 400 pages. Hard cover for durability.", inStock: true, isNew: true },
-    { id: 21, name: "EX Book - Single Line", category: "books", subcategory: "ex-books", price: 150, originalPrice: 180, image: "images/ex-book-single.jpg", rating: 4.2, reviews: 198, badge: "", description: "EX exercise book with single line ruling. Standard school exercise book.", inStock: true, isNew: false },
+    { id: 17, name: "Atlas A4 Book CR 200Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 425, originalPrice: 430, image: "Atlas A4 Book CR 200Pgs (=) Single Ruled.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false },
+    { id: 18, name: "Atlas A4 Book CR 160Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 330, originalPrice: 350, image: "Atlas A4 Book CR 160Pgs (=) Single Ruled.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 160 pages. Durable cover and quality paper.", inStock: true, isNew: false },
+    { id: 19, name: "Atlas A4 Book CR 120Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 240, originalPrice: 250, image: "Atlas A4 Book CR 120Pgs (=) Single Ruled.jpg", rating: 4.4, reviews: 167, badge: "hot", description: "Premium CR exercise book with 120 pages. Perfect for school and college.", inStock: true, isNew: false },
+    { id: 20, name: "Atlas A4 Book CR 80Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 150, originalPrice: 180, image: "Atlas A4 Book CR 80Pgs (=) Single Ruled.jpg", rating: 4.6, reviews: 143, badge: "new", description: "Premium CR exercise book with 80 pages. Perfect for daily use.", inStock: true, isNew: true },
+    { id: 21, name: "Atlas A4 Book CR 40Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 100, originalPrice: 110, image: "Atlas A4 Book CR 40Pgs (=) Single Ruled.jpg", rating: 4.2, reviews: 198, badge: "", description: "Premium CR exercise book with 40 pages. Perfect for daily use.", inStock: true, isNew: false },
+    { id: 59, name: "Atlas A4 Book CR 200Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 425, originalPrice: 430, image: "Atlas A4 CR Book Square Ruled 200Pgs.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false },
+    { id: 60, name: "Atlas A4 Book CR 160Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 330, originalPrice: 350, image: "Atlas A4 CR Book Square Ruled 160Pgs.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 160 pages. Durable cover and quality paper.", inStock: true, isNew: false },
+    { id: 61, name: "Atlas A4 Book CR 120Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 240, originalPrice: 250, image: "Atlas A4 CR Book Square Ruled 120Pgs.jpg", rating: 4.4, reviews: 167, badge: "hot", description: "Premium CR exercise book with 120 pages. Perfect for school and college.", inStock: true, isNew: false },
+    { id: 62, name: "Atlas A4 Book CR 80Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 150, originalPrice: 180, image: "Atlas A4 CR Book Square Ruled 80Pgs.jpg", rating: 4.6, reviews: 143, badge: "new", description: "Premium CR exercise book with 80 pages. Perfect for daily use.", inStock: true, isNew: true },
+    { id: 63, name: "Atlas A4 Book CR 40Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 100, originalPrice: 110, image: "Atlas A4 CR Book Square Ruled 40Pgs.jpg", rating: 4.2, reviews: 198, badge: "", description: "Premium CR exercise book with 40 pages. Perfect for daily use.", inStock: true, isNew: false },
     { id: 22, name: "EX Book - Square Ruled", category: "books", subcategory: "ex-books", price: 160, originalPrice: 200, image:"images/ex-book-square.jpg", rating :4.3 , reviews :156 , badge :"" , description:"EX exercise book with square ruling. Perfect for math and science.", inStock:true , isNew:false },
     { id :23 , name :"Adventure Novel Collection" , category :"books" , subcategory :"novels" , price :850 , originalPrice :1200 , image :"images/adventure-novel.jpg" , rating :4.8 , reviews :78 , badge :"sale" , description :"Exciting adventure novel collection. Set of 3 bestselling novels." , inStock:true , isNew:false },
     { id :24 , name :"Mystery Novel - Bestseller" , category :"books" , subcategory :"novels" , price :650 , originalPrice :800 , image :"images/mystery-novel.jpg" , rating :4.7 , reviews :92 , badge :"hot" , description :"Thrilling mystery novel. A page-turner you won't be able to put down." , inStock:true , isNew:true },
@@ -6125,6 +6724,16 @@ function initPreloader() {
 }
 
 // ===== Page Navigation =====
+// Newsletter Subscription
+function subscribeNewsletter(event) {
+    event.preventDefault();
+    const email = event.target.querySelector('input').value;
+    
+    // Simulate subscription (replace with actual API call)
+    showToast('Thank you for subscribing to our newsletter!', 'success');
+    event.target.reset();
+}
+
 // Toast Messages (Success/Error පණිවිඩ)
 function showToast(message, type = 'success') {
     const container = document.getElementById('toastContainer');
