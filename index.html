@@ -158,12 +158,12 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 99999;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 #preloader.hidden {
@@ -175,86 +175,81 @@ ul {
 /* Preloader Content */
 .preloader-content {
     text-align: center;
-    color: white;
-    animation: fadeInUp 0.8s ease;
+    color: var(--gray-700);
 }
 
 .preloader-logo {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+.preloader-logo img {
+    width: 120px;
+    height: auto;
 }
 
 .preloader-icon {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, #e94560, #ff6b6b);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 30px;
-    animation: pulse-glow 2s ease-in-out infinite, bounce 1s ease infinite;
-    box-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
+    margin: 0 auto 25px;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
 .preloader-icon i {
-    font-size: 42px;
+    font-size: 36px;
     color: white;
 }
 
 .preloader-title {
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 6px;
-    margin: 0 0 15px 0;
-    background: linear-gradient(135deg, #fff, #e94560);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--primary);
 }
 
 .preloader-tagline {
-    font-size: 1.1rem;
-    font-weight: 300;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    font-weight: 400;
     margin: 0;
-    letter-spacing: 3px;
-    color: #a0a0a0;
+    color: var(--gray-500);
 }
 
 /* Progress Bar */
 .preloader-progress {
-    width: 300px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    margin: 40px auto;
+    width: 200px;
+    height: 4px;
+    background: var(--gray-200);
+    border-radius: 4px;
+    margin: 30px auto 0;
     overflow: hidden;
 }
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #e94560, #ff6b6b, #e94560);
-    border-radius: 3px;
-    animation: progress 1.5s ease-in-out infinite;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 4px;
+    animation: progress 1.2s ease-in-out infinite;
     width: 100%;
-    background-size: 200% 100%;
 }
 
 .preloader-loading {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    opacity: 0.7;
-    margin: 0;
-    letter-spacing: 4px;
+    margin: 15px 0 0 0;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #e94560;
+    color: var(--gray-500);
 }
 
 /* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -262,30 +257,29 @@ ul {
     }
 }
 
-@keyframes bounce {
+@keyframes pulse {
     0%, 100% {
-        transform: translateY(0);
+        transform: scale(1);
+        opacity: 1;
     }
     50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes pulse-glow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(233, 69, 96, 0.8);
+        transform: scale(1.05);
+        opacity: 0.9;
     }
 }
 
 @keyframes progress {
     0% {
-        background-position: 100% 0;
+        width: 0%;
+        margin-left: 0;
+    }
+    50% {
+        width: 70%;
+        margin-left: 0;
     }
     100% {
-        background-position: -100% 0;
+        width: 0%;
+        margin-left: 100%;
     }
 }
 
@@ -6136,10 +6130,9 @@ ul {
    ========================================== */
 
 // ===== Product Data =====
-// ===== Product Data =====
-const products = [
+   const products = [
     // SHOES
-    { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: true, isNew: false },
+    { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: false, isNew: false },
     { id: 2, name: "School Shoes - White", category: "shoes", subcategory: "school-shoes", price: 3200, originalPrice: 3800, image: "whitesc.jpg", rating: 4.3, reviews: 95, badge: "sale", description: "Comfortable white school shoes with breathable lining. Ideal for long school days.", inStock: true, isNew: false },
     { id: 3, name: "Men's Casual Leather Shoes", category: "shoes", subcategory: "mens-shoes", price: 5500, originalPrice: 7000, image: "lather.jpg", rating: 4.7, reviews: 67, badge: "sale", description: "Premium men's casual leather shoes. Stylish and comfortable for office and casual wear.", inStock: true, isNew: false },
     {
@@ -6231,8 +6224,8 @@ const products = [
     },
     // BAGS
     { id:11, name: "12V DC Neon Strip Light - 5m", category: "electric", subcategory: "gadgets", price: 1250, originalPrice: 1500, image: ["lights.jpeg","lights 01.jpeg","lights 02.jpeg","lights 03.jpeg"],colors:[{ name: "White", code: "#FFFFFF"},{ name: "Red", code: "#EF4444"},{ name: "Blue", code: "#3B82F6"},{ name: "Lime Blue", code: "#ADD8E6"},{name:"yellow",code:"#FFFF00"},{name:"gren", code:"#00FF00"},{name:"pink",code:"#FFC0CB"}], rating: 4.8, reviews: 156, badge: "hot", description: "High-quality 12V DC neon strip light with 5m length. Perfect for home or office decoration. 5M LED neon rope light, DC12V low voltage, SMD 2835 120 LED/m, warm white 3000K, IP67 waterproof rated (Waterproof power supply required for outdoor use, NOT included in the package). •", inStock: true, isNew: false },
-    { id:12, name: "School Bag - Blue", category: "bags", subcategory: "school-bags", price: 3200, originalPrice: 4000, image: "images/school-bag-blue.jpg", rating: 4.4, reviews: 112, badge: "sale", description: "Durable blue school bag with laptop compartment. Ergonomic design for comfort.", inStock: true, isNew: false },
-    { id: 13, name: "Ladies Handbag - Pink", category: "bags", subcategory: "ladies-bags", price: 3800, originalPrice: 4500, image: "images/ladies-handbag-pink.jpg", rating: 4.5, reviews: 89, badge: "new", description: "Stylish pink ladies handbag with multiple pockets. Premium PU leather material.", inStock: true, isNew: true },
+    { id:12, name: "puma Sports Sandals", category: "shoes", subcategory: "men-sandals", price: 2100, originalPrice: 2500, image: ["black ball.png","ball 01.png","ball.png"], sizes: [{name: "40", price: 2100}, {name: "41", price: 2100}, {name: "42", price: 2100}, {name: "43", price: 2100}, {name: "44", price: 2100}, {name: "45", price: 2100}], rating: 4.7, reviews: 89, badge: "hot", description: "Experience unparalleled comfort with our premium Puma Sports Sandals. Designed for the modern athlete and casual wearer alike, these sandals feature an innovative contoured footbed that adapts to your foot's unique shape, providing personalized support with every step you take. The sleek sporty design combines functionality with fashion, featuring bold Puma branding that makes a statement whether you're at the gym, the beach, or hanging out with friends. Constructed with premium synthetic materials and a reinforced strap system, these sandals are built to last through countless adventures. The advanced anti-slip outsole technology ensures superior traction on wet and dry surfaces alike, giving you the confidence to move freely in any environment. Versatile enough to complement any casual outfit, these sandals are the perfect addition to your summer footwear collection.", keyFeatures: ["Premium Comfort: Ergonomic contoured footbed for personalized support", "Sporty Design: Bold Puma branding for a standout look", "Durable Construction: High-quality synthetic materials", "Advanced Grip: Anti-slip outsole for all surfaces", "Versatile Style: Perfect for casual and athletic wear"], inStock: true, isNew: true },
+    { id: 13, name: "nike Sports Sandals", category: "shoes", subcategory: "men-sandals", price: 1990, originalPrice: 2100, image: ["black nike.png","blue nike (2).png","blue nike.png"],sizes: [{name: "40", price: 1990}, {name: "41", price: 1990}, {name: "42", price: 1990}, {name: "43", price: 1990}, {name: "44", price: 1990}, {name: "45", price: 2100}], rating: 4.5, reviews: 89, badge: "new", description: "Elevate your footwear game with our premium Nike Sports Sandals, where legendary style meets exceptional comfort. These sandals feature an advanced cushioned footbed that molds to your foot, delivering cloud-like comfort for all-day wear. The iconic Nike design with bold branding creates a timeless athletic look that transitions seamlessly from workout sessions to weekend adventures. Crafted with premium materials and expert craftsmanship, these sandals are designed to withstand the test of time while maintaining their pristine appearance. The innovative grip technology provides reliable traction on any surface, ensuring you stay confident in every step. Whether you're pairing them with athletic socks for a sporty look or going barefoot for maximum breathability, these versatile sandals are the ultimate choice for the style-conscious individual.", keyFeatures: ["Cloud Comfort: Advanced cushioned footbed for all-day comfort", "Iconic Style: Bold Nike branding for a timeless look", "Premium Quality: Expert craftsmanship and durable materials", "Superior Grip: Reliable traction on any surface", "Ultimate Versatility: Perfect for any casual or athletic outfit"], inStock: true, isNew: true },
     { id: 14, name: "Large Capacity Travel Bag",
         category: "bags",
         subcategory: "ladies-bags",
@@ -6256,7 +6249,7 @@ const products = [
         isNew: false
      },
 
-    { id: 15, name: "Pre-School Backpack - Cartoon", category: "bags", subcategory: "pre-school-bags", price: 1400, originalPrice: 1800, image: ["images/preschool-backpack.jpg"], rating: 4.7, reviews: 134, badge: "hot", description: "Cute cartoon pre-school backpack. Lightweight and perfect for little ones.", inStock: true, isNew: false },
+    { id: 15, name: "48 Wholesale Men's Slipper Summer Stripes Design", category: "shoes", subcategory: "men-sandals", price: 1990, originalPrice: 2000, image: ["blue line.png","red line.png"],sizes: [{name: "40", price: 1990}, {name: "41", price: 1990}, {name: "42", price: 1990}, {name: "43", price: 1990}, {name: "44", price: 1990}, {name: "45", price: 2100}], colors: [{ name: "Red", code: "#EF4444", image: "red line.png" },{ name: "Blue", code: "#3B82F6", image: "blue line.png" }], rating: 4.7, reviews: 134, badge: "hot", description: "Step into summer style with our premium Men's Slipper Summer Stripes Design! Crafted for ultimate comfort and casual elegance, these slippers feature a sleek striped pattern that adds a touch of modern sophistication to your relaxed look. Made from high-quality, breathable materials that keep your feet cool and comfortable during hot summer days. The soft cushioned insole provides excellent support, while the durable outsole ensures reliable grip on any surface. Perfect for indoor relaxation, poolside lounging, or casual outdoor activities. Available in classic colors that complement any summer outfit.", inStock: true, isNew: false, keyFeatures: ["Premium Stripes Design: Modern striped pattern for stylish look", "Breathable Materials: Keeps feet cool and comfortable", "Cushioned Insole: Excellent support for all-day comfort", "Durable Outsole: Reliable grip on any surface", "Versatile Use: Perfect for indoor, poolside, or outdoor", "Easy Care: Simple to clean and maintain"] },
     { id: 16, name: "Pre-School Mini Bag", category: "bags", subcategory: "pre-school-bags", price: 1800, originalPrice: 2200, image: "images/preschool-mini-bag.jpg", rating: 4.5, reviews: 98, badge: "", description: "Adorable mini bag for pre-schoolers. Soft material with adjustable straps.", inStock: true, isNew: true },
 
     // BOOKS
@@ -6647,7 +6640,138 @@ const products = [
     description: "Product Details: High Quality, Ready Stock, Fast Delivery, Big Discount, Better Service, COD Support. Features: 100% brand new and high quality, Shock proof material protect your laptop from dust, shock, scratches, bumps and other daily damage, Double zip seal on the top to secure your laptop, Light, soft and comfortable cover for Macbook, Soft cushion interior provide your laptop all-around protection, Fashionable and unique design, Portable and convenient to carry, Protection for your notebook keep away from shaking or scratching. Specifications: Material: cotton, Size: 13 inch: 34.5*24.5*2 cm (L * W * H); 15.6 inch: 39.5*28*2 cm (L * W * H), Ready Stock di Malaysia. Package Contents: 1x Laptop Sleeve Bag", 
     inStock: true, 
     isNew: false 
-}
+},
+{ 
+    id: 64, 
+    name: "Xiaomi Waterproof Usb Backpack", 
+    category: "bags", 
+    subcategory: "lap-bags", 
+    price: 1800, 
+    originalPrice: 1900, 
+    image: ["xiomi.png","xiomi 01.jpeg","xiomi 03.jpeg"], 
+    rating: 4.8, 
+    reviews: 25, 
+    badge: "hot", 
+    description: "    Craftsmanship, the details are not afraid to be magnified. Lightweight, breathable and water resistant. The texture is delicate, resistant to dirt, wear and splashes. Minimalist for easy travel. Connect the power bank inside the bag and connect the phone outside the bag. Laptop Messenger Bag, Shoulder Bag, Canvas Backpack, Oxford Cloth, Multifunctional Laptop Tablet Briefcase...Size: 34cm", 
+    inStock: true, 
+    isNew: false 
+},
+{ 
+    id: 65, 
+    name: "Cooling Bath Towel", 
+    category: "cloths", 
+    subcategory: "home", 
+    price: 800, 
+    originalPrice: 900, 
+    image: ["cloth bed1.jpeg","cloth bed 01.jpeg","clth.jpeg","cloth bed.jpeg"], 
+    rating: 4.8, 
+    reviews: 25, 
+    badge: "hot", 
+    description: "New Ice Cold Durable Running Jogging Gym Instant Cooling Outdoor Sports Towel Hot Sale Cool Towels Make you feel cool and comfortable for several hours when you are doing outdoor sports, say goodbye to the hot summer . Ideal for all outdoor activities, such as cycling, golf, camping, climbing, fishing, hunting, hiking, jogging, etc. Can be also used in high temperature work, such as construction sites, driving, welding, painting and various industrial fields Can even be used as first aid application like migraines, fevers, bee stings, sprains, etc. Note: Since the size above is measured by hand, the size of the actual item you received could be slightly different", 
+    inStock: true, 
+    isNew: false 
+},
+{ 
+    id: 66, 
+    name: "Impulse Sealer - 150mm", 
+    category: "electric", 
+    subcategory: "gadgets", 
+    price: 3400, 
+    originalPrice: 3900, 
+    image: ["hot seal 01.jpeg","hot seal 02.jpeg"], 
+    rating: 4.8, 
+    reviews: 25, 
+    badge: "hot", 
+    description: "This sealer suits for various plastic films package , which applies to foodstuff,candy,medicine,local specialty,electric elements, etc It is most inexpensive and beneficial sealer used in factories,shops and service industries.The 6″ 150mm Impulse Sealer Heat Sealing Machine is an ideal tools to seal PE and PP bags, Mylar, polypropylene, static shielding, nylon, polyethylene, polyurethane bags, foam. It can be used for packaging any kinds of subjects, e.g: groceries, candy, stationery, medication drugs, general items, etc. It is widely used in food industry, chemical industry, electronic industry, medical industry, etc. It is also ideal for home use. The sealer is made of high quality aluminum alloy and stainless steel, which is durable and long lasting. The sealer has a compact design and is easy to operate. It has a sealing width of 2mm and a sealing length of 150mm. The sealer can be used for sealing bags with a thickness of up to 0.3mm. It is a great tool for keeping your food fresh and preventing contamination.", 
+    inStock: true, 
+    isNew: false 
+},
+{ 
+    id: 67, 
+    name: "5 In 1 Hot Hair Styler", 
+    category: "electric", 
+    subcategory: "gadgets", 
+    price: 2300, 
+    originalPrice: 2500, 
+    image: ["hear 01.jpeg","hear 02.jpeg","hear 03.jpeg"], 
+    rating: 4.8, 
+    reviews: 25, 
+    badge: "hot", 
+    description: "5-in-1 Multifunctional Curling Iron Set, Hot Air Styler Styling Tool, with 5 Interchangeable Barrels, Hair Dryer Straighteners Curling Irons Hot Wind Combs Hot air blow dryer styler 5 in 1: a perfect combination of hair dryer, curling iron, straightener, massage comb. It gives you an effortless drying and styling experience at home, just like freshly from the hairdresser. Switch between the 5 attachments as you like and enjoy fabulous volume and defined style, straight, wavy or curly hair as you like. Humanised design: the single-stage hair dryer and styler volumiser are very light, bristles eliminate tangles and anti-static, offers 3 temperature controls, reduce noise and dry your hair quickly. The curling iron is perfect for making loose curls, natural curls, body waves, small or medium curls and vintage waves. Super hair care: negative ion hair dryer hair dryer, constant temperature and ionisation function for smooth styling without frizz. Your hair is protected and dried evenly at a constant temperature, not damaged. This hair dryer also releases hair care ions, nourishes and repairs your hair, protecting your hair. PROFESSIONAL STYLING TOOL: This versatile curling iron set draws and curls hair with airflow. Don't worry about arm pain. It is very lightweight and portable, easy to use and suitable for home or travel use. Perfect gift: the hair dryer brush is a unique hair brush for all hair types. Hair styling brush is suitable for families, business trips, weddings and holidays, to give you the freedom to style your hair as you like. The beautiful packaging also allows you to use it as a gift for friends, family or anyone you love.", 
+    inStock: true, 
+    isNew: false 
+},
+{ 
+    id: 68, 
+    name: "Derma Roller - DRS", 
+    category: "beauty-accessories", 
+    subcategory: "men", 
+    price: 1800, 
+    originalPrice: 2300, 
+    image: ["roller.jpeg","roller 01.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Derma Roller System 540 needles with Titianim alloy Needles. Features & details Stimulates skin regeneration Reduces stretch marks & cellulite Reduces hyper-pigmentation Removes very deep wrinkles and reduces acne scars Improves the absorption & effectiveness of skin care products Stimulate the collagen production. Improve elasticity of skin. Promote skin rejuvenation Promote blood circulation and grow your hair & beard.Attentions- Do not force the roller into the skin but simply use mild pressure.- Roll obliquely at the same intensity covering the same areas in both directions (vertically and horizontally).- The roller cannot be overused as the needles will remain sharp for a prolonged time.- Not suitable for use onto the following skin conditions: active acne, eczema, rosacea, peonasis, servere solar karatosis and raised moles or warts.- Keep out of reach of children.........",
+    inStock: true,
+    isNew: false 
+},
+{ 
+    id: 69, 
+    name: "5 Pcs Travel Makeup Brush With Mirror", 
+    category: "beauty-accessories", 
+    subcategory: "women", 
+    price: 850, 
+    originalPrice: 950, 
+    image: ["makeup.jpeg","maakeup 01.jpeg","makeup 03.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: " Suitable for women and girls: these compact makeup brushes will make a lot of difference for your daily facial makeup, suitable for most women and girls, whether you are beauty beginners or makeup artists. And it will be a unique and ideal gift for any of your family member or friends. Easy to hold and use: Cute small makeup brushes equipped with a shiny smooth surface handle, which are made of ABS material, comfortable grip, looks stylish and is easy to operate. Skin friendly material: Our mini facial cosmetic makeup brush set are made of synthetic fiber, delicate, soft and comfortable feel, fast drying and not prone to caking. Safe without stinging or irritating the skin. Lightweight and portable: This is a great travel size brush set and fits easy in a tiny makeup bag to carry on. This easy-taken makeup brush set weighs 0.34 lbs and the box size is 5.7x3.5'x 0.9', making it lightweight and portable for travel and work. Complete functions: 5 essential cosmetic brushes in a small case,includes etail brush, nose shadow brush, loose powder brush, eye shadow brush, smudge brush. And the storage case is so practical with the mirror inside, all is enough to help achieve a full-face look.......",
+    inStock: true,
+    isNew: false 
+},
+{ 
+    id: 70, 
+    name: "10 Pcs Makeup Brush With Pouch", 
+    category: "beauty-accessories", 
+    subcategory: "women", 
+    price: 850, 
+    originalPrice: 950, 
+    image: ["mb 01.jpeg","mb 02.jpeg","mb 03.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Skin Type: Normal /Product Benefits: Portable /Bristle Material: Synthetic Fibers /Recommended Uses For Product: For Blending /Color: Pink /Item Form: Angled/Rounded (Contour), Flat/Angled (Foundation), Round/Dome (Eyeshadow), Rounded/Oval (Blush)....",
+    inStock: true,
+    isNew: false 
+},
+{ 
+    id: 71, 
+    name: "pre school and grade(01,02,03)(boys / girls)",
+    category: "bags", 
+    subcategory: "pre-school-bags", 
+    price: 1800, 
+    originalPrice: 1950, 
+    image: ["pre school bag.jpg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "This waterproof school bag is perfect for preschool and grade 01 and 02 students. The cartoon design is suitable for both boys and girls, making it a cute and fun accessory for your child. Made from high-quality materials, this backpack is durable and can withstand daily wear and tear. It features a spacious main compartment and adjustable shoulder straps for a comfortable fit. This bag is the best gift for 4-5-year-olds and is perfect for carrying books, snacks, and other essentials. Whether it's for school or travel, this backpack is a great choice for your little one.",
+    inStock: true,
+    isNew: false,
+    sizes: [
+        { name: "Pre School", price: 1500 },
+        { name: "Grade 01", price: 1800 },
+        { name: "Grade 02", price: 1800 },
+        { name: "Grade 03", price: 1800 }
+    ]
+},
+{ id: 72, name: "Jordan Jumpman Men's Slides", category: "shoes", subcategory: "men-sandals", price: 2290, originalPrice: 2500, image: ["black ball.png","ball.png","ball 01.png"],sizes: [{name: "40", price: 2290}, {name: "41", price: 2290}, {name: "42", price: 2290}, {name: "43", price: 2290}, {name: "44", price: 2290}, {name: "45", price: 2290}], colors: [{ name: "Red", code: "#EF4444" },{ name: "Blue", code: "#3B82F6" },{ name: "Black", code: "#000000" }], rating: 4.7, reviews: 134, badge: "hot", description: "Experience legendary Jordan style with our authentic Jordan Jumpman Men's Slides! These premium slides combine the iconic Jumpman branding with unmatched comfort for the ultimate casual footwear experience. Perfect for athletes, sneakerheads, and fashion-forward individuals who want to showcase their love for the Jordan brand. The contoured footbed provides exceptional comfort, molding to your foot for personalized support, while the durable outsole delivers reliable traction. Whether you're hitting the gym, lounging by the pool, or running casual errands, these slides make a bold statement. The sleek design features the famous Jumpman logo prominently, ensuring you stand out from the crowd. Made with premium materials that are built to last, these slides offer exceptional value for anyone seeking luxury casual footwear.", inStock: true, isNew: false, keyFeatures: ["Iconic Jumpman Logo: Bold branding for authentic Jordan style", "Contoured Footbed: Personalized comfort that molds to your foot", "Premium Materials: High-quality construction for durability", "Versatile Design: Perfect for gym, pool, or casual outings", "Multiple Sizes: Available from size 40-45", "Available Colors: Classic Red and Blue options"] },
+
+
+
+
 ];
 // ===== Category & Subcategory Data =====
 const categoryData = {
@@ -6655,9 +6779,12 @@ const categoryData = {
         name: "Shoes",
         icon: "fa-shoe-prints",
         subcategories: {
+            "kids-shoes": "Kids Shoes",
             "school-shoes": "School Shoes",
             "mens-shoes": "Men's Shoes",
-            "ladies-shoes": "Ladies Shoes"
+            "ladies-shoes": "Ladies Shoes",
+            "men-sandals": "Men Sandals",
+            "ladies-sandals": "Ladies Sandals"
         }
     },
     bags: {
@@ -6729,7 +6856,8 @@ const categoryData = {
             "boys-underdress": "Boys Undergarments", // Under dress / Innerwear
             "girls-underdress": "Girls Undergarments",
             "rain-coats": "Rain Coat",
-            "sports-outfit": "Sports Outfit"
+            "sports-outfit": "Sports Outfit",
+            "home": "Home Accessories",
         }
     },
     "home-accessories": {
@@ -6752,7 +6880,6 @@ const categoryData = {
     },
     
 };
-
 // ===== State =====
 let cart = JSON.parse(localStorage.getItem('levindra_cart')) || [];
 let wishlist = JSON.parse(localStorage.getItem('levindra_wishlist')) || [];
@@ -7883,5 +8010,18 @@ function runCounters() {
 }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69b845e563bf201c368be23a/1jjrt22jn';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
