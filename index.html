@@ -2679,6 +2679,56 @@ ul {
     min-width: 150px;
 }
 
+/* ===== Key Features ===== */
+.product-key-features {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+}
+
+.product-key-features h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--gray-800);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-key-features h3 i {
+    color: var(--primary);
+}
+
+.product-key-features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.product-key-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+.product-key-features li i {
+    color: var(--success);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Size Buttons */
+.size-btn:hover {
+    border-color: var(--primary) !important;
+    background: var(--primary-light) !important;
+    color: white !important;
+}
+
 /* ===== Wishlist ===== */
 .empty-state {
     text-align: center;
@@ -4156,6 +4206,152 @@ ul {
     overflow: hidden;
 }
 
+.welcome-title {
+    text-align: center;
+    padding: 15px 12px 12px;
+}
+
+.welcome-emoji {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.welcome-title h2 {
+    color: var(--primary);
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+}
+
+.welcome-content {
+    padding: 0 15px 15px;
+}
+
+.welcome-message-text {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.welcome-message-text p {
+    color: #555;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.brand-name {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.welcome-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+    font-size: 22px;
+    margin-bottom: 6px;
+    display: block;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+
+.feature-text h4 {
+    color: var(--primary);
+    margin: 0 0 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.feature-text p {
+    color: #666;
+    font-size: 11px;
+    margin: 0;
+}
+
+.welcome-offer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(249,168,212,0.08));
+    border-radius: 12px;
+    border: 1px solid rgba(124,58,237,0.15);
+}
+
+.welcome-offer p {
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Add charming hover effects to buttons */
+.swal2-confirm {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(124,58,237,0.4) !important;
+    transition: all 0.3s ease !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.swal2-confirm:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(124,58,237,0.5) !important;
+}
+
+.swal2-cancel {
+    background: linear-gradient(135deg, #e0e0e0, #bdbdbd) !important;
+    border: none !important;
+    color: #555 !important;
+    font-weight: 600 !important;
+}
+
+.swal2-cancel:hover {
+    transform: translateY(-2px) !important;
+    background: linear-gradient(135deg, #d5d5d5, #b2b2b2) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+}
+    
+    .welcome-title h2 {
+        font-size: 24px;
+    }
+    
+    .welcome-emoji {
+        font-size: 40px;
+    }
+    
+    .welcome-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .line-animation::after {
     content: '';
     position: absolute;
@@ -4929,11 +5125,12 @@ ul {
     <header id="header">
         <nav class="navbar">
             <div class="nav-container">
-                <a href="#" class="logo" data-page="home">
-                    <img src="logo.png" alt="Lavindra Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 8px;">
-                    <span class="logo-text">Lavindra</span>
-                </a>
-                <div class="nav-links" id="navLinks">
+<a href="#" class="logo" data-page="home">
+                     <img src="logo.png" alt="Lavindra Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 8px;">
+                     <span class="logo-text">Lavindra</span>
+                 </a>
+                 <div id="welcome-msg" class="welcome-msg"></div>
+                 <div class="nav-links" id="navLinks">
                     <a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
                     <a href="#" class="nav-link" data-page="shop"><i class="fas fa-store"></i><span>Shop</span></a>
                     <a href="#" class="nav-link" data-page="categories"><i class="fas fa-th-large"></i><span>Categories</span></a>
@@ -4972,16 +5169,16 @@ ul {
         <a href="#" class="mobile-nav-item active" data-page="home">
             <i class="fas fa-home"></i><span>Home</span>
         </a>
-        <a href="#" class="mobile-nav-item" data-page="categories">
-            <i class="fas fa-th-large"></i><span>Categories</span>
+        <a href="#" class="mobile-nav-item" data-page="shop">
+            <i class="fas fa-store"></i><span>Shop</span>
         </a>
         <a href="#" class="mobile-nav-item cart-mobile" id="cartMobileToggle">
             <i class="fas fa-shopping-cart"></i>
             <span class="badge cart-count">0</span>
             <span>Cart</span>
         </a>
-        <a href="#" class="mobile-nav-item" data-page="wishlist">
-            <i class="fas fa-heart"></i><span>Wishlist</span>
+        <a href="#" class="mobile-nav-item" data-page="">
+            <i class="fas fa-heart"></i><span></span>
         </a>
     </nav>
 
@@ -5016,7 +5213,7 @@ ul {
             <!-- Hero -->
             <div class="hero">
                 <div class="hero-slider">
-                    <div class="hero-slide active" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('home.jpeg') center/cover no-repeat;">
+                    <div class="hero-slide active" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('e-commers 01.jpg') center/cover no-repeat;">
                         <div class="hero-content animate-slide-up">
                             <span class="hero-badge">New Collection 2026</span>
                             <h1>Welcome to <span class="highlight">Levindra</span></h1>
@@ -5038,7 +5235,7 @@ ul {
                             </div>
                         </div>
                     </div>
-                    <div class="hero-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('offer.png') center/cover no-repeat;">
+                    <div class="hero-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('e.jpg') center/cover no-repeat;">
                         <div class="hero-content animate-slide-up">
                             <span class="hero-badge">Special Offers</span>
                             <h1>Up to <span class="highlight">10% Off</span></h1>
@@ -5303,17 +5500,18 @@ ul {
                             </div>
                         </div>
                         <!-- Sort -->
-                        <div class="filter-group">
-                            <h4>Sort By</h4>
-                            <select id="sortBy" class="filter-select">
-                                <option value="default">Default</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="name-az">Name: A to Z</option>
-                                <option value="name-za">Name: Z to A</option>
-                                <option value="newest">Newest First</option>
-                            </select>
-                        </div>
+                         <div class="filter-group">
+                             <h4>Sort By</h4>
+                             <select id="sortBy" class="filter-select">
+                                 <option value="default">Default</option>
+                                 <option value="price-low">Price: Low to High</option>
+                                 <option value="price-high">Price: High to Low</option>
+                                 <option value="name-az">Name: A to Z</option>
+                                 <option value="name-za">Name: Z to A</option>
+                                 <option value="newest">Newest First</option>
+                                 <option value="random">Trending Products</option>
+                             </select>
+                         </div>
                         <button class="btn btn-primary btn-block" id="clearFilters">Clear All Filters</button>
                     </aside>
                     <!-- Products Area -->
@@ -5417,7 +5615,7 @@ ul {
                 <div class="checkout-layout">
                     <div class="checkout-form">
                         <h3><i class="fas fa-map-marker-alt"></i> Shipping Information</h3>
-                        <form id="checkoutForm" method="POST" enctype="multipart/form-data">
+                        <form id="checkoutForm" action="https://formspree.io/f/maqpjkll" method="POST">
     <div class="form-row">
         <div class="form-group">
             <label>First Name *</label>
@@ -5464,8 +5662,10 @@ ul {
     </div>
          
 
-    <input type="hidden" name="Order_Summary" id="orderSummary">
-    <input type="hidden" name="Total_Price" id="totalPrice">
+    <input type="hidden" name="order_id" id="orderIdInput">
+    <input type="hidden" name="order_items" id="orderItemsInput">
+    <input type="hidden" name="total_amount" id="totalAmountInput">
+    <input type="hidden" name="payment_method" value="Cash on Delivery (COD)">
 
     <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-block mt-4">
         <i class="fas fa-lock"></i> Place Order
@@ -6132,9 +6332,9 @@ ul {
 // ===== Product Data =====
    const products = [
     // SHOES
-    { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: false, isNew: false },
-    { id: 2, name: "School Shoes - White", category: "shoes", subcategory: "school-shoes", price: 3200, originalPrice: 3800, image: "whitesc.jpg", rating: 4.3, reviews: 95, badge: "sale", description: "Comfortable white school shoes with breathable lining. Ideal for long school days.", inStock: true, isNew: false },
-    { id: 3, name: "Men's Casual Leather Shoes", category: "shoes", subcategory: "mens-shoes", price: 5500, originalPrice: 7000, image: "lather.jpg", rating: 4.7, reviews: 67, badge: "sale", description: "Premium men's casual leather shoes. Stylish and comfortable for office and casual wear.", inStock: true, isNew: false },
+    { id: 1, name: "Classic School Shoes - Black", category: "shoes", subcategory: "school-shoes", price: 3500, originalPrice: 4200, image: "PE0436-1.jpg", rating: 4.5, reviews: 128, badge: "hot", description: "Durable black school shoes with comfortable cushioning. Perfect for everyday school wear. Made with premium leather and anti-slip sole.", inStock: false, isNew: false, keyFeatures: ["Premium Leather Upper: Durable and long-lasting material", "Comfortable Cushioning: All-day wear comfort", "Anti-Slip Sole: Enhanced safety and grip", "Breathable Lining: Keeps feet fresh and dry", "Easy to Clean: Simple maintenance for lasting wear"] },
+    { id: 2, name: "School Shoes - White", category: "shoes", subcategory: "school-shoes", price: 3200, originalPrice: 3800, image: "whitesc.jpg", rating: 4.3, reviews: 95, badge: "sale", description: "Comfortable white school shoes with breathable lining. Ideal for long school days.", inStock: true, isNew: false, keyFeatures: ["Breathable Lining: Keeps feet cool and dry", "Lightweight Design: Reduces foot fatigue", "Easy to Clean: Simple maintenance", "Durable Construction: Long-lasting wear", "Classic Style: Timeless white color"] },
+    { id: 3, name: "Men's Casual Leather Shoes", category: "shoes", subcategory: "mens-shoes", price: 5500, originalPrice: 7000, image: "lather.jpg", rating: 4.7, reviews: 67, badge: "sale", description: "Premium men's casual leather shoes. Stylish and comfortable for office and casual wear.", inStock: true, isNew: false, keyFeatures: ["Genuine Leather Construction: Premium quality and durability", "Comfortable Fit: Designed for all-day wear", "Versatile Style: Suitable for both office and casual occasions", "Quality Stitching: Enhanced durability and appearance", "Easy Maintenance: Simple to clean and care for"] },
     {
         id: 4, 
         name: "Men's Sports Shoes", 
@@ -6148,9 +6348,10 @@ ul {
         badge: "", 
         description: "Lightweight men's sports shoes with excellent grip. Perfect for running and gym.", 
         inStock: false, 
-        isNew: true 
+        isNew: true,
+        keyFeatures: ["Lightweight Design: Reduces fatigue during activity", "Excellent Grip: Enhanced traction and stability", "Breathable Mesh: Keeps feet cool and dry", "Shock Absorption: Superior impact protection", "Flexible Construction: Natural foot movement"] 
     },
-    { id: 5, name: "Ladies Formal Shoes", category: "shoes", subcategory: "ladies-shoes", price: 4200, originalPrice: 5000, image:"staff-ladies-shoes.jpg" , rating: 4.6, reviews: 54, badge:"new" , description:"Elegant ladies formal shoes with comfortable heel. Perfect for office and events.", inStock:true , isNew:true },
+    { id: 5, name: "Ladies Formal Shoes", category: "shoes", subcategory: "ladies-shoes", price: 4200, originalPrice: 5000, image:"staff-ladies-shoes.jpg" , rating: 4.6, reviews: 54, badge:"new" , description:"Elegant ladies formal shoes with comfortable heel. Perfect for office and events.", inStock:true , isNew:true , keyFeatures: ["Elegant Design: Sophisticated and professional appearance", "Comfortable Heel: Ideal for extended wear", "Quality Materials: Durable and long-lasting construction", "Versatile Style: Suitable for office and formal events", "Easy Maintenance: Simple to clean and care for"] },
     { id :6 , name:"53 Pcs Tool Set" , category:"electric" , subcategory:"gadgets" , price :2400 , originalPrice :3500 , image:["Pcs Tool Set 04.jpeg","Pcs Tool Set 01.jpeg","Pcs Tool Set 02.jpeg","Pcs Tool Set 03.jpeg"] , rating :4.2 , reviews :73 , badge:"", description:["Product details of High Quality 53 pcs Spanner Set Car Auto Repair Tool",
 "• High Quality and Professional",
 "• Professional Tool Set",
@@ -6161,7 +6362,7 @@ ul {
 "• Reliable Material",
 "53PCS 1/4” Dr. Socket Wrench Set",
 
-"21-Bit Sockets: SL4,5.5,7,PH1,2,3,PZ1,2,3               HEX3,4,5,6,7,8, T10,15,20,25,30,40               13-1/4”DR Sockets:4,4.5,5,6,7,8,9,10,11,12,13,14MM               7-1/4”DR Deep Sockets Wrench:6,7,81,12,13,14MM               3-Hex Keywrenches: 1.5,2,2.5MM               1-1/4″Dr universal Joint               1-1/4″*2″Extension Ban               1-1/4″*4″Extension Ban               1-1/4”*6″Extension Ban               1-1/4″Dr Sliding T bar               1-1/4″ Quick RatchetHandle               1-6″Spanner Handle               1-Bit Adapter               1-Blow Case...."], inStock:true , isNew:false },
+"21-Bit Sockets: SL4,5.5,7,PH1,2,3,PZ1,2,3               HEX3,4,5,6,7,8, T10,15,20,25,30,40               13-1/4”DR Sockets:4,4.5,5,6,7,8,9,10,11,12,13,14MM               7-1/4”DR Deep Sockets Wrench:6,7,81,12,13,14MM               3-Hex Keywrenches: 1.5,2,2.5MM               1-1/4″Dr universal Joint               1-1/4″*2″Extension Ban               1-1/4″*4″Extension Ban               1-1/4”*6″Extension Ban               1-1/4″Dr Sliding T bar               1-1/4″ Quick RatchetHandle               1-6″Spanner Handle               1-Bit Adapter               1-Blow Case...."], inStock:true , isNew:false , keyFeatures: ["High Quality and Professional: Professional grade tools", "Durable Construction: Long-lasting and reliable", "Corrosion-Resistant: Protection against rust and wear", "Easy Storage: Includes organized carrying case", "Complete Set: 53 pieces for versatile use"] },
     {
         id: 7, 
         name: "Men's Sports Shoes MS-wh001", 
@@ -6223,7 +6424,7 @@ ul {
         isNew: true 
     },
     // BAGS
-    { id:11, name: "12V DC Neon Strip Light - 5m", category: "electric", subcategory: "gadgets", price: 1250, originalPrice: 1500, image: ["lights.jpeg","lights 01.jpeg","lights 02.jpeg","lights 03.jpeg"],colors:[{ name: "White", code: "#FFFFFF"},{ name: "Red", code: "#EF4444"},{ name: "Blue", code: "#3B82F6"},{ name: "Lime Blue", code: "#ADD8E6"},{name:"yellow",code:"#FFFF00"},{name:"gren", code:"#00FF00"},{name:"pink",code:"#FFC0CB"}], rating: 4.8, reviews: 156, badge: "hot", description: "High-quality 12V DC neon strip light with 5m length. Perfect for home or office decoration. 5M LED neon rope light, DC12V low voltage, SMD 2835 120 LED/m, warm white 3000K, IP67 waterproof rated (Waterproof power supply required for outdoor use, NOT included in the package). •", inStock: true, isNew: false },
+    { id:11, name: "12V DC Neon Strip Light - 5m", category: "electric", subcategory: "gadgets", price: 1250, originalPrice: 1500, image: ["lights.jpeg","lights 01.jpeg","lights 02.jpeg","lights 03.jpeg"],colors:[{ name: "White", code: "#FFFFFF"},{ name: "Red", code: "#EF4444"},{ name: "Blue", code: "#3B82F6"},{ name: "Lime Blue", code: "#ADD8E6"},{name:"yellow",code:"#FFFF00"},{name:"gren", code:"#00FF00"},{name:"pink",code:"#FFC0CB"}], rating: 4.8, reviews: 156, badge: "hot", description: "High-quality 12V DC neon strip light with 5m length. Perfect for home or office decoration. 5M LED neon rope light, DC12V low voltage, SMD 2835 120 LED/m, warm white 3000K, IP67 waterproof rated (Waterproof power supply required for outdoor use, NOT included in the package). •", inStock: true, isNew: false, keyFeatures: ["Waterproof Design: IP67 rated for outdoor use", "Easy Installation: Flexible and simple to install", "Energy Efficient: Low power consumption", "Multiple Colors: Available in various vibrant colors", "Long Length: 5 meters for extensive coverage"] },
     { id:12, name: "puma Sports Sandals", category: "shoes", subcategory: "men-sandals", price: 2100, originalPrice: 2500, image: ["black ball.png","ball 01.png","ball.png"], sizes: [{name: "40", price: 2100}, {name: "41", price: 2100}, {name: "42", price: 2100}, {name: "43", price: 2100}, {name: "44", price: 2100}, {name: "45", price: 2100}], rating: 4.7, reviews: 89, badge: "hot", description: "Experience unparalleled comfort with our premium Puma Sports Sandals. Designed for the modern athlete and casual wearer alike, these sandals feature an innovative contoured footbed that adapts to your foot's unique shape, providing personalized support with every step you take. The sleek sporty design combines functionality with fashion, featuring bold Puma branding that makes a statement whether you're at the gym, the beach, or hanging out with friends. Constructed with premium synthetic materials and a reinforced strap system, these sandals are built to last through countless adventures. The advanced anti-slip outsole technology ensures superior traction on wet and dry surfaces alike, giving you the confidence to move freely in any environment. Versatile enough to complement any casual outfit, these sandals are the perfect addition to your summer footwear collection.", keyFeatures: ["Premium Comfort: Ergonomic contoured footbed for personalized support", "Sporty Design: Bold Puma branding for a standout look", "Durable Construction: High-quality synthetic materials", "Advanced Grip: Anti-slip outsole for all surfaces", "Versatile Style: Perfect for casual and athletic wear"], inStock: true, isNew: true },
     { id: 13, name: "nike Sports Sandals", category: "shoes", subcategory: "men-sandals", price: 1990, originalPrice: 2100, image: ["black nike.png","blue nike (2).png","blue nike.png"],sizes: [{name: "40", price: 1990}, {name: "41", price: 1990}, {name: "42", price: 1990}, {name: "43", price: 1990}, {name: "44", price: 1990}, {name: "45", price: 2100}], rating: 4.5, reviews: 89, badge: "new", description: "Elevate your footwear game with our premium Nike Sports Sandals, where legendary style meets exceptional comfort. These sandals feature an advanced cushioned footbed that molds to your foot, delivering cloud-like comfort for all-day wear. The iconic Nike design with bold branding creates a timeless athletic look that transitions seamlessly from workout sessions to weekend adventures. Crafted with premium materials and expert craftsmanship, these sandals are designed to withstand the test of time while maintaining their pristine appearance. The innovative grip technology provides reliable traction on any surface, ensuring you stay confident in every step. Whether you're pairing them with athletic socks for a sporty look or going barefoot for maximum breathability, these versatile sandals are the ultimate choice for the style-conscious individual.", keyFeatures: ["Cloud Comfort: Advanced cushioned footbed for all-day comfort", "Iconic Style: Bold Nike branding for a timeless look", "Premium Quality: Expert craftsmanship and durable materials", "Superior Grip: Reliable traction on any surface", "Ultimate Versatility: Perfect for any casual or athletic outfit"], inStock: true, isNew: true },
     { id: 14, name: "Large Capacity Travel Bag",
@@ -6250,20 +6451,20 @@ ul {
      },
 
     { id: 15, name: "48 Wholesale Men's Slipper Summer Stripes Design", category: "shoes", subcategory: "men-sandals", price: 1990, originalPrice: 2000, image: ["blue line.png","red line.png"],sizes: [{name: "40", price: 1990}, {name: "41", price: 1990}, {name: "42", price: 1990}, {name: "43", price: 1990}, {name: "44", price: 1990}, {name: "45", price: 2100}], colors: [{ name: "Red", code: "#EF4444", image: "red line.png" },{ name: "Blue", code: "#3B82F6", image: "blue line.png" }], rating: 4.7, reviews: 134, badge: "hot", description: "Step into summer style with our premium Men's Slipper Summer Stripes Design! Crafted for ultimate comfort and casual elegance, these slippers feature a sleek striped pattern that adds a touch of modern sophistication to your relaxed look. Made from high-quality, breathable materials that keep your feet cool and comfortable during hot summer days. The soft cushioned insole provides excellent support, while the durable outsole ensures reliable grip on any surface. Perfect for indoor relaxation, poolside lounging, or casual outdoor activities. Available in classic colors that complement any summer outfit.", inStock: true, isNew: false, keyFeatures: ["Premium Stripes Design: Modern striped pattern for stylish look", "Breathable Materials: Keeps feet cool and comfortable", "Cushioned Insole: Excellent support for all-day comfort", "Durable Outsole: Reliable grip on any surface", "Versatile Use: Perfect for indoor, poolside, or outdoor", "Easy Care: Simple to clean and maintain"] },
-    { id: 16, name: "Pre-School Mini Bag", category: "bags", subcategory: "pre-school-bags", price: 1800, originalPrice: 2200, image: "images/preschool-mini-bag.jpg", rating: 4.5, reviews: 98, badge: "", description: "Adorable mini bag for pre-schoolers. Soft material with adjustable straps.", inStock: true, isNew: true },
+    { id: 16, name: "Pre-School Mini Bag", category: "bags", subcategory: "pre-school-bags", price: 1800, originalPrice: 2200, image: "images/preschool-mini-bag.jpg", rating: 4.5, reviews: 98, badge: "", description: "Adorable mini bag for pre-schoolers. Soft material with adjustable straps.", inStock: true, isNew: true, keyFeatures: ["Adorable Design: Fun and appealing to children", "Adjustable Straps: Grows with your child", "Soft Material: Gentle on delicate skin", "Easy to Clean: Simple maintenance", "Perfect Size: Ideal for pre-school essentials"] },
 
     // BOOKS
-    { id: 17, name: "Atlas A4 Book CR 200Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 425, originalPrice: 430, image: "Atlas A4 Book CR 200Pgs (=) Single Ruled.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false },
-    { id: 18, name: "Atlas A4 Book CR 160Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 330, originalPrice: 350, image: "Atlas A4 Book CR 160Pgs (=) Single Ruled.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 160 pages. Durable cover and quality paper.", inStock: true, isNew: false },
-    { id: 19, name: "Atlas A4 Book CR 120Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 240, originalPrice: 250, image: "Atlas A4 Book CR 120Pgs (=) Single Ruled.jpg", rating: 4.4, reviews: 167, badge: "hot", description: "Premium CR exercise book with 120 pages. Perfect for school and college.", inStock: true, isNew: false },
-    { id: 20, name: "Atlas A4 Book CR 80Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 150, originalPrice: 180, image: "Atlas A4 Book CR 80Pgs (=) Single Ruled.jpg", rating: 4.6, reviews: 143, badge: "new", description: "Premium CR exercise book with 80 pages. Perfect for daily use.", inStock: true, isNew: true },
-    { id: 21, name: "Atlas A4 Book CR 40Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 100, originalPrice: 110, image: "Atlas A4 Book CR 40Pgs (=) Single Ruled.jpg", rating: 4.2, reviews: 198, badge: "", description: "Premium CR exercise book with 40 pages. Perfect for daily use.", inStock: true, isNew: false },
-    { id: 59, name: "Atlas A4 Book CR 200Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 425, originalPrice: 430, image: "Atlas A4 CR Book Square Ruled 200Pgs.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false },
-    { id: 60, name: "Atlas A4 Book CR 160Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 330, originalPrice: 350, image: "Atlas A4 CR Book Square Ruled 160Pgs.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 160 pages. Durable cover and quality paper.", inStock: true, isNew: false },
-    { id: 61, name: "Atlas A4 Book CR 120Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 240, originalPrice: 250, image: "Atlas A4 CR Book Square Ruled 120Pgs.jpg", rating: 4.4, reviews: 167, badge: "hot", description: "Premium CR exercise book with 120 pages. Perfect for school and college.", inStock: true, isNew: false },
+    { id: 17, name: "Atlas A4 Book CR 200Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 425, originalPrice: 430, image: "Atlas A4 Book CR 200Pgs (=) Single Ruled.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false, keyFeatures: ["High Quality Paper: Smooth surface for easy writing", "200 Pages: Ample space for notes and exercises", "CR Ruling: Standard format for school work", "Durable Binding: Long-lasting construction", "A4 Size: Standard school notebook size"] },
+    { id: 18, name: "Atlas A4 Book CR 160Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 330, originalPrice: 350, image: "Atlas A4 Book CR 160Pgs (=) Single Ruled.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 160 pages. Durable cover and quality paper.", inStock: true, isNew: false, keyFeatures: ["Premium Quality Paper: Smooth and durable for writing", "160 Pages: Sufficient for a semester's work", "Durable Cover: Protects pages from wear and tear", "Standard Ruling: Single ruled for neat writing", "A4 Size: Standard school notebook size"] },
+    { id: 19, name: "Atlas A4 Book CR 120Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 240, originalPrice: 250, image: "Atlas A4 Book CR 120Pgs (=) Single Ruled.jpg", rating: 4.4, reviews: 167, badge: "hot", description: "Premium CR exercise book with 120 pages. Perfect for school and college.", inStock: true, isNew: false, keyFeatures: ["Premium Quality Paper: Smooth surface for neat writing", "120 Pages: Adequate for school term", "CR Ruling: Standard format for exercises", "Durable Cover: Protects content from damage", "A4 Size: Compatible with school requirements"] },
+    { id: 20, name: "Atlas A4 Book CR 80Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 150, originalPrice: 180, image: "Atlas A4 Book CR 80Pgs (=) Single Ruled.jpg", rating: 4.6, reviews: 143, badge: "new", description: "Premium CR exercise book with 80 pages. Perfect for daily use.", inStock: true, isNew: true, keyFeatures: ["High Quality Paper: Smooth surface for easy writing", "80 Pages: Convenient size for daily use", "Single Ruled: Standard format for exercises", "Durable Cover: Protection from wear and tear", "A4 Size: Standard school notebook size"] },
+    { id: 21, name: "Atlas A4 Book CR 40Pgs (=) Single Ruled", category: "books", subcategory: "cr-books", price: 100, originalPrice: 110, image: "Atlas A4 Book CR 40Pgs (=) Single Ruled.jpg", rating: 4.2, reviews: 198, badge: "", description: "Premium CR exercise book with 40 pages. Perfect for daily use.", inStock: true, isNew: false, keyFeatures: ["Premium Quality Paper: Smooth surface for writing", "40 Pages: Compact size for quick notes", "Single Ruled: Standard format for exercises", "Durable Cover: Protection from damage", "A4 Size: Compatible with school requirements"] },
+    { id: 59, name: "Atlas A4 Book CR 200Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 425, originalPrice: 430, image: "Atlas A4 CR Book Square Ruled 200Pgs.jpg", rating: 4.3, reviews: 245, badge: "", description: "High quality CR exercise book with 200 pages. Smooth paper for easy writing.", inStock: true, isNew: false, keyFeatures: ["High Quality Paper: Smooth surface for writing", "200 Pages: Ample space for notes and exercises", "Square Ruling: Ideal for math and diagrams", "Durable Binding: Long-lasting construction", "A4 Size: Standard school notebook size"] },
+    { id: 60, name: "Atlas A4 Book CR 160Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 330, originalPrice: 350, image: "Atlas A4 CR Book Square Ruled 160Pgs.jpg", rating: 4.5, reviews: 189, badge: "sale", description: "Premium CR exercise book with 160 pages. Durable cover and quality paper.", inStock: true, isNew: false, keyFeatures: ["Premium Quality Paper: Smooth and durable for writing", "160 Pages: Sufficient for a semester's work", "Square Ruling: Ideal for math and diagrams", "Durable Cover: Protects pages from wear and tear", "A4 Size: Standard school notebook size"] },
+    { id: 61, name: "Atlas A4 Book CR 120Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 240, originalPrice: 250, image: "Atlas A4 CR Book Square Ruled 120Pgs.jpg", rating: 4.4, reviews: 167, badge: "hot", description: "Premium CR exercise book with 120 pages. Perfect for school and college.", inStock: true, isNew: false, keyFeatures: ["Premium Quality Paper: Smooth surface for neat writing", "120 Pages: Adequate for school term", "Square Ruling: Ideal for math and diagrams", "Durable Cover: Protects content from damage", "A4 Size: Compatible with school requirements"] },
     { id: 62, name: "Atlas A4 Book CR 80Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 150, originalPrice: 180, image: "Atlas A4 CR Book Square Ruled 80Pgs.jpg", rating: 4.6, reviews: 143, badge: "new", description: "Premium CR exercise book with 80 pages. Perfect for daily use.", inStock: true, isNew: true },
     { id: 63, name: "Atlas A4 Book CR 40Pgs (#) Square Ruled", category: "books", subcategory: "cr-books", price: 100, originalPrice: 110, image: "Atlas A4 CR Book Square Ruled 40Pgs.jpg", rating: 4.2, reviews: 198, badge: "", description: "Premium CR exercise book with 40 pages. Perfect for daily use.", inStock: true, isNew: false },
-    { id: 22, name: "EX Book - Square Ruled", category: "books", subcategory: "ex-books", price: 160, originalPrice: 200, image:"images/ex-book-square.jpg", rating :4.3 , reviews :156 , badge :"" , description:"EX exercise book with square ruling. Perfect for math and science.", inStock:true , isNew:false },
+    { id: 22, name: "EX Book - Square Ruled", category: "books", subcategory: "ex-books", price: 160, originalPrice: 200, image:"images/ex-book-square.jpg", rating :4.3 , reviews :156 , badge :"" , description:"EX exercise book with square ruling. Perfect for math and science.", inStock:true , isNew:false , keyFeatures: ["Square Ruling: Ideal for math and science diagrams", "Quality Paper: Smooth surface for writing", "Durable Binding: Long-lasting construction", "Standard Size: Compatible with school requirements", "Perfect for School: Ideal for math and science classes"] },
     { id :23 , name :"Adventure Novel Collection" , category :"books" , subcategory :"novels" , price :850 , originalPrice :1200 , image :"images/adventure-novel.jpg" , rating :4.8 , reviews :78 , badge :"sale" , description :"Exciting adventure novel collection. Set of 3 bestselling novels." , inStock:true , isNew:false },
     { id :24 , name :"Mystery Novel - Bestseller" , category :"books" , subcategory :"novels" , price :650 , originalPrice :800 , image :"images/mystery-novel.jpg" , rating :4.7 , reviews :92 , badge :"hot" , description :"Thrilling mystery novel. A page-turner you won't be able to put down." , inStock:true , isNew:true },
 
@@ -6768,6 +6969,80 @@ ul {
     ]
 },
 { id: 72, name: "Jordan Jumpman Men's Slides", category: "shoes", subcategory: "men-sandals", price: 2290, originalPrice: 2500, image: ["black ball.png","ball.png","ball 01.png"],sizes: [{name: "40", price: 2290}, {name: "41", price: 2290}, {name: "42", price: 2290}, {name: "43", price: 2290}, {name: "44", price: 2290}, {name: "45", price: 2290}], colors: [{ name: "Red", code: "#EF4444" },{ name: "Blue", code: "#3B82F6" },{ name: "Black", code: "#000000" }], rating: 4.7, reviews: 134, badge: "hot", description: "Experience legendary Jordan style with our authentic Jordan Jumpman Men's Slides! These premium slides combine the iconic Jumpman branding with unmatched comfort for the ultimate casual footwear experience. Perfect for athletes, sneakerheads, and fashion-forward individuals who want to showcase their love for the Jordan brand. The contoured footbed provides exceptional comfort, molding to your foot for personalized support, while the durable outsole delivers reliable traction. Whether you're hitting the gym, lounging by the pool, or running casual errands, these slides make a bold statement. The sleek design features the famous Jumpman logo prominently, ensuring you stand out from the crowd. Made with premium materials that are built to last, these slides offer exceptional value for anyone seeking luxury casual footwear.", inStock: true, isNew: false, keyFeatures: ["Iconic Jumpman Logo: Bold branding for authentic Jordan style", "Contoured Footbed: Personalized comfort that molds to your foot", "Premium Materials: High-quality construction for durability", "Versatile Design: Perfect for gym, pool, or casual outings", "Multiple Sizes: Available from size 40-45", "Available Colors: Classic Red and Blue options"] },
+{ 
+    id: 73, 
+    name: "Elegant Gold-Trimmed Ceramic Serving Tray with Beaded Handles",
+    category: "home-accessories",
+    subcategory: "kitchen-accessories",
+    price: 1600, 
+    originalPrice: 1950, 
+    image: ["plate01.jpeg","plate02.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Elevate your home decor or dining experience with this exquisite luxury ceramic tray. Featuring a unique, fluid-curved silhouette and a stunning white glossy finish, this piece is more than just a tray—it's a statement of sophistication.The center is adorned with a delicate golden four-leaf clover motif and the inspiring quote, Meet one in 100 thousand happiness, making it a perfect gift for weddings, housewarmings, or special celebrations. Whether you are serving tea to guests or using it as a vanity organizer for your perfumes and jewelry, this tray adds a touch of lucky charm and high-end flair to any setting. Crafted from high-quality ceramic, it is both durable and elegant, making it a versatile addition to your home. The beaded handles not only enhance its aesthetic appeal but also provide a comfortable grip for easy carrying. This tray is designed to impress and is sure to become a cherished piece in your collection.",
+    inStock: true,
+    isNew: false,
+    keyFeatures: [
+        "Exquisite Design: Unique fluid-curved silhouette",
+        "Stunning Finish: Elegant white glossy finish",
+        "Golden Motif: Delicate four-leaf clover design",
+        "Inspirational Quote: Meet one in 100 thousand happiness",
+        "Versatile Use: Perfect for dining or home decor",
+        "Durable Construction: High-quality ceramic material"
+    ],
+
+},
+{ 
+    id:74, 
+    name: "Ribbed Acrylic Serving Tray with Gold Handles - Elegant Home Decor Accent",
+    category: "home-accessories",
+    subcategory: "kitchen-accessories",
+    price:1000,
+    originalPrice:1500,
+    image: ["table01.jpeg","table03.jpeg","table02.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Add a touch of contemporary elegance to your home with our Crystal Clear Sunburst Tray. Designed for those who appreciate minimalist luxury, this tray features a stunning radial sunburst texture etched into the base, which catches the light beautifully from every angle.The sleek, transparent acrylic is complemented by bold gold-toned handles, offering a perfect blend of modern materials and classic glamour. Whether you are serving morning coffee, displaying appetizers at a dinner party, or organizing your favorite skincare on a vanity, this tray provides a sturdy and high-end foundation for any occasion., Crafted from durable acrylic, it is lightweight yet sturdy, making it easy to carry and perfect for both everyday use and special occasions. The gold handles not only add a luxurious touch but also provide a comfortable grip for effortless serving. This tray is designed to impress and is sure to become a cherished piece in your home decor collection.",
+    inStock: true,
+    isNew: false,
+    keyFeatures: [
+        "Premium Acrylic Material: Made from thick, high-quality transparent acrylic that provides the clarity of glass with the durability and lightweight feel of modern polymers.",
+        "Unique Sunburst Texture: The base features an elegant radial pattern that prevents items from slipping and creates a beautiful light-refracting effect.",
+        "Elegant Gold Handles: Bold gold-toned handles add a luxurious touch and provide a comfortable grip.",
+        "Versatile Use: Perfect for serving coffee, displaying appetizers, or organizing skincare.",
+        "Durable Construction: Crafted from sturdy acrylic for long-lasting use.",
+        "Stunning Visual Appeal: The combination of transparent acrylic and gold handles creates a modern yet classic look."
+    ],
+},
+{ 
+    id:75, 
+    name: "Vintage-Style Embossed Glass Serving Dish with Natural Wooden Base & Gold Diamond Knob - Elegant Home Decor Accent",
+    category: "home-accessories",
+    subcategory: "kitchen-accessories",
+    price: 1200,
+    originalPrice: 1800,
+    image: ["dish01.jpeg","dish02.jpeg"], 
+    rating: 4.9, 
+    reviews: 80, 
+    badge: "new", 
+    description: "Add a touch of timeless charm to your dining table with this Elegant Embossed Glass Serving Set. This set features a beautifully crafted glass dish with intricate vintage patterns, paired perfectly with a smooth, natural wood serving platter.The highlight of the piece is the golden diamond-cut knob on the lid, which adds a luxurious sparkle to the rustic wooden base. Whether you are using it to serve traditional sweets, chocolates, or specialty cheeses, this dish keeps your food fresh while looking like a decorative centerpiece. It is the perfect blend of natural textures and royal elegance. Crafted from high-quality glass and natural wood, this serving dish is both durable and visually stunning. The embossed glass adds a vintage flair, while the wooden base provides a warm, rustic contrast. The gold diamond-cut knob not only enhances the aesthetic appeal but also offers a comfortable grip for easy access. This serving set is ideal for special occasions or as a unique addition to your home decor collection.",
+    inStock: true,
+    isNew: false,
+    keyFeatures: [
+        "Classic Embossed Glass: Features high-quality, thickened glass with detailed traditional patterns that catch the light beautifully.",
+        "Eco-Friendly Wooden Base: Includes a durable, finely sanded natural wood tray that provides a warm, organic contrast to the glass.",
+        "Gold Diamond Finisher: A stunning gold-toned, faceted knob on the lid for easy handling and a premium decorative touch.",
+        "Durable Construction: Built to last with high-quality materials and craftsmanship.",
+        "Stunning Visual Appeal: The combination of embossed glass and natural wood creates a timeless look.",
+        "Versatile Use: Perfect for serving a variety of foods and as a beautiful home decor piece."
+    ],
+sizes: [
+        { name: "small", price: 780 },
+        { name: "large", price: 1200 }
+    ]
+},
 
 
 
@@ -6866,7 +7141,13 @@ const categoryData = {
         subcategories: {
             "mosquito-nets": "Mosquito Nets",
             "rug": "Rug",
-            "door-cloth": "Door Cloth"
+            "door-cloth": "Door Cloth",
+            "curtains": "Curtains",
+            "cushion-covers": "Cushion Covers",
+            "bed-sheets": "Bed Sheets",
+            "blankets": "Blankets",
+            "pillows": "Pillows",
+            'kitchen-accessories': "Kitchen Accessories"
         }
     },
     "beauty-accessories": {
@@ -6987,16 +7268,9 @@ const checkoutForm = document.getElementById('checkoutForm');
 if (checkoutForm) {
     checkoutForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-
-        const form = e.target;
-        const submitBtn = document.getElementById('submitBtn');
-        const paymentOption = document.querySelector('input[name="payment_method"]:checked');
         
-        if (!paymentOption) {
-            alert("Please select a payment method.");
-            return;
-        }
-
+        const submitBtn = document.getElementById('submitBtn');
+        
         if (cart.length === 0) {
             alert('Your cart is empty!');
             return;
@@ -7007,67 +7281,73 @@ if (checkoutForm) {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
         }
 
-        const firstName = form.querySelector('input[name="first_name"]')?.value || "";
-        const lastName = form.querySelector('input[name="last_name"]')?.value || "";
-        const phone = form.querySelector('input[name="phone"]')?.value || "";
-        const address = form.querySelector('textarea[name="address"]')?.value || "";
-        const city = form.querySelector('input[name="city"]')?.value || "";
-        const paymentMethod = paymentOption.value;
+        const firstName = checkoutForm.querySelector('input[name="first_name"]')?.value || "";
+        const lastName = checkoutForm.querySelector('input[name="last_name"]')?.value || "";
+        const email = checkoutForm.querySelector('input[name="email"]')?.value || "";
+        const phone = checkoutForm.querySelector('input[name="phone"]')?.value || "";
+        const address = checkoutForm.querySelector('textarea[name="address"]')?.value || "";
+        const city = checkoutForm.querySelector('input[name="city"]')?.value || "";
+        const postalCode = checkoutForm.querySelector('input[name="postal_code"]')?.value || "";
         
         let totalAmountElement = document.getElementById('checkoutTotal');
         let finalTotalAmount = totalAmountElement ? totalAmountElement.innerText : "Rs. 0.00";
 
         const orderId = 'LEV-' + Date.now().toString(36).toUpperCase();
 
-        const orderIdEl = document.getElementById('orderId');
-        if (orderIdEl) orderIdEl.textContent = orderId;
-        
-        const overlay = document.getElementById('orderSuccessOverlay');
-        const modal = document.getElementById('orderSuccessModal');
-        if (overlay) overlay.classList.add('active');
-        if (modal) modal.classList.add('active');
-        
-        if (paymentMethod === 'cod') {
-            let whatsappMessage = `*New Order - Lavindra Shop*\n\n`;
-            
-            whatsappMessage += `*🙍🏻 Customer Info:*\n`;
-            whatsappMessage += `Name: ${firstName} ${lastName}\n`;
-            whatsappMessage += `Phone: ${phone}\n\n`;
-            
-            whatsappMessage += `*🚛 Delivery Details:*\n`;
-            whatsappMessage += `Address: ${address}\n`;
-            whatsappMessage += `City: ${city}\n`;
-            whatsappMessage += `Delivery Fee: Rs. 450\n\n`;
-            
-            whatsappMessage += `*🛒 Order Items:*\n`;
-            
-            if (cart.length > 0) {
-                cart.forEach((item, index) => {
-                    const product = products.find(p => p.id === item.id);
-                    if (product) {
-                        let qty = item.qty || 1;
-                        let itemTotal = product.price * qty;
-                        let colorText = item.color ? ` [Color: ${item.color}]` : '';
-                        whatsappMessage += `${index + 1}. ${product.name}${colorText} (x${qty}) - Rs. ${itemTotal.toLocaleString()}\n`;
-                    }
-                });
-            }
-
-            whatsappMessage += `\n*💰 Final Total (with Delivery): ${finalTotalAmount}*\n`;
-            whatsappMessage += `*Payment Method: Cash on Delivery (COD)*\n\n`;
-            whatsappMessage += `🏷️ Order ID: ${orderId}\n`;
-            whatsappMessage += `❤️ Thank you! Please confirm this order.`;
-
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappURL = `https://wa.me/94789647790?text=${encodedMessage}`;
-            
-            window.open(whatsappURL, '_blank');
+        let orderItemsText = '';
+        if (cart.length > 0) {
+            cart.forEach((item, index) => {
+                const product = products.find(p => p.id === item.id);
+                if (product) {
+                    let qty = item.qty || 1;
+                    let itemTotal = product.price * qty;
+                    let colorText = item.color ? ` [Color: ${item.color}]` : '';
+                    orderItemsText += `${index + 1}. ${product.name}${colorText} (x${qty}) - Rs. ${itemTotal.toLocaleString()}\n`;
+                }
+            });
         }
-        
-        cart = [];
-        localStorage.removeItem('levindra_cart');
-        updateCartUI();
-        form.reset();
+
+        const formData = new FormData();
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('address', address);
+        formData.append('city', city);
+        formData.append('postal_code', postalCode);
+        formData.append('order_id', orderId);
+        formData.append('order_items', orderItemsText);
+        formData.append('total_amount', finalTotalAmount);
+        formData.append('payment_method', 'Cash on Delivery (COD)');
+
+        try {
+            const response = await fetch('https://formspree.io/f/maqpjkll', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const orderIdEl = document.getElementById('orderId');
+                if (orderIdEl) orderIdEl.textContent = orderId;
+                
+                const overlay = document.getElementById('orderSuccessOverlay');
+                const modal = document.getElementById('orderSuccessModal');
+                if (overlay) overlay.classList.add('active');
+                if (modal) modal.classList.add('active');
+                
+                cart = [];
+                localStorage.removeItem('levindra_cart');
+                updateCartUI();
+                checkoutForm.reset();
+            } else {
+                alert('Failed to submit order. Please try again.');
+            }
+        } catch (error) {
+            alert('Error submitting order. Please try again.');
+        }
         
         if (submitBtn) {
             submitBtn.disabled = false;
@@ -7075,7 +7355,6 @@ if (checkoutForm) {
         }
     });
 }
-
 // Order Success Modal close handler
 const orderSuccessClose = document.getElementById('orderSuccessClose');
 if (orderSuccessClose) {
@@ -7410,6 +7689,7 @@ function renderShopProducts() {
     else if (currentSort === 'price-high') filtered.sort((a, b) => b.price - a.price);
     else if (currentSort === 'name-az') filtered.sort((a, b) => a.name.localeCompare(b.name));
     else if (currentSort === 'name-za') filtered.sort((a, b) => b.name.localeCompare(a.name));
+    else if (currentSort === 'random') filtered.sort(() => Math.random() - 0.5);
 
     document.getElementById('productCount').textContent = `${filtered.length} products`;
 
@@ -7756,6 +8036,23 @@ function selectColor(element, colorName) {
     currentSelectedColor = colorName;
 }
 
+// Size එක click කරාම වෙනස් කරන Function එක
+let currentSelectedSize = null;
+function selectSize(element, sizeName) {
+    // අනිත් සේරගෙම border එක සාමාන්‍ය විදිහට හදනවා
+    document.querySelectorAll('.size-btn').forEach(el => {
+        el.style.borderColor = 'var(--gray-300)';
+        el.style.background = 'white';
+        el.style.color = 'var(--gray-700)';
+    });
+    // තේරුව එකේ border එක පාට කරනවා
+    element.style.borderColor = 'var(--primary)';
+    element.style.background = 'var(--primary)';
+    element.style.color = 'white';
+    
+    currentSelectedSize = sizeName;
+}
+
 // ===== Product Details Page Function (UPDATED WITH BACK BUTTON) =====
 function viewProduct(productId) {
     const product = products.find(p => p.id === productId);
@@ -7819,6 +8116,39 @@ function viewProduct(productId) {
             </div>
         `;
     }
+    
+    // Sizes and Key Features Section
+    let sizesAndFeaturesHtml = '';
+    if (product.sizes && product.sizes.length > 0) {
+        sizesAndFeaturesHtml = `
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 8px;">Size:</label>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    ${product.sizes.map((size, index) => `
+                        <button onclick="selectSize(this, '${size.name}')" 
+                                class="size-btn"
+                                style="padding: 8px 16px; border: 2px solid ${index === 0 ? 'var(--primary)' : 'var(--gray-300)'}; border-radius: 8px; background: ${index === 0 ? 'var(--primary)' : 'white'}; color: ${index === 0 ? 'white' : 'var(--gray-700)'}; font-weight: 500; cursor: pointer; transition: all 0.2s;">
+                            ${size.name}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Add keyFeatures in sizes section
+    if (product.keyFeatures && product.keyFeatures.length > 0) {
+        sizesAndFeaturesHtml += `
+            <div style="margin-bottom: 20px; padding: 15px; background: var(--gray-50); border-radius: 12px;">
+                <label style="font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 12px;"><i class="fas fa-star" style="color: var(--primary);"></i> Key Features:</label>
+                <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin: 0; padding-left: 20px;">
+                    ${product.keyFeatures.map(feature => `
+                        <li style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 4px;"><i class="fas fa-check" style="color: var(--success); margin-right: 6px;"></i>${feature}</li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }
 
     // --- අලුතින් එකතු කරපු BACK බටන් එක ---
     const backButtonHtml = `
@@ -7856,6 +8186,8 @@ function viewProduct(productId) {
             <p class="product-description">${product.description}</p>
             
             ${colorsHtml}
+            
+            ${sizesAndFeaturesHtml}
             
             <div class="quantity-selector">
                 <label>Quantity:</label>
@@ -8008,6 +8340,45 @@ function runCounters() {
         updateCount();
     });
 }
+
+// Welcome message based on time of day
+function updateWelcomeMessage() {
+    const hour = new Date().getHours();
+    let message = '';
+    if (hour < 12) {
+        message = 'Good Morning';
+    } else if (hour < 18) {
+        message = 'Good Afternoon';
+    } else {
+        message = 'Good Night';
+    }
+    const element = document.getElementById('welcome-msg');
+    if (element) {
+        element.textContent = message;
+    }
+    
+    // Show popup welcome message (only once per session) - NORMAL DESIGN
+    if (!sessionStorage.getItem('welcomeShown')) {
+        Swal.fire({
+            title: message,
+            text: 'Welcome to Lavindra Shop! Discover quality products for your needs.',
+            icon: 'info',
+            confirmButtonText: 'Visit Shop',
+            confirmButtonColor: '#7C3AED',
+            showCancelButton: true,
+            cancelButtonText: 'Not Now'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect to shop if they click "Visit Shop"
+                navigateTo('shop');
+            }
+            sessionStorage.setItem('welcomeShown', 'true');
+        });
+    }
+}
+
+// Run on load
+window.addEventListener('load', updateWelcomeMessage);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!--Start of Tawk.to Script-->
